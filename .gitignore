@@ -1,0 +1,5 @@
+/IViewer/files/*
+/IViewer/*.resx
+*.vb
+obj/
+bin

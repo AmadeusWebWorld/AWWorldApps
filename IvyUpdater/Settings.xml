@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Frequency>Daily</Frequency>
+  <NeverCheck>false</NeverCheck>
+  <NextUpdateAt>2013-02-11T00:00:00+05:30</NextUpdateAt>
+  <LastCheckedAt>2013-02-10T11:05:05.2397408+05:30</LastCheckedAt>
+  <LastUpdateAt xsi:nil="true" />
+  <LastRemindedAt xsi:nil="true" />
+  <RemindAfter>
+    <Unit>Day</Unit>
+    <Value>0</Value>
+  </RemindAfter>
+</Settings>

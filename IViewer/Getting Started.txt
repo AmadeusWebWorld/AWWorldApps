@@ -1,0 +1,11 @@
+First Configure the Folder(s) where your files are stored by going to Tools > Options > Folders
+Add a folder (for ex d:\Music)
+
+Now Save Options 
+If the folder you added fails to appear on the left, please restart the app.
+
+Go to Tools > Save Media Library
+This will scan all files into your library (so that search as you type will work)
+
+Go To Help > Readme to see the various features or check with
+http://ivy.cselian.com/iviewer for more information.

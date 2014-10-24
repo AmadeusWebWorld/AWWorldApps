@@ -1,0 +1,51 @@
+﻿
+
+2013
+Wrote and integrated IvyUpdater
+
+New Year's Week 2012
+Complete Migrate to C#
+Settings is now XmlSerialized
+Added History and Favorites
+Fix problem with Panning Menu (use KeyPreview instead of ProcessCmdKey)
+
+25 Nov 2012
+Lyrics Looping (by Group)
+Panning for Current Track
+Make 'Playlist Vertically' also visible only when both are shown
+
+16 Nov 2012
+Lyrics are overlaid on the player. With a context menu
+File Duration overlaid on player.
+Horizontal icon was interchanged
+Moved Stick to playlist to the tooblar
+Basic Lyrics Viewer/Editor added
+
+3 Nov 2012
+Made UserInput a dialog with ok / cancel buttons
+
+29 Oct 2012
+Fixed problem with Folder column duplicate and loading. And also file list size
+
+24 Oct 2012
+Added support to show lyrics (refreshes at 100 mS) based on the .lrc format of mini lyrics
+
+18 Oct 2012:
+Search dropdown, SelectorType (3 radio button menus)
+Read version off Assembly
+Open Containing Folder
+
+10 Oct 2012:
+Fixed playlist dirtiness
+
+5 Oct 2012:
+Added Playlist
+
+4 Oct 2012:
+Added a Goto Folder option
+Cleaned up some settings
+Added empty playlists node
+
+2009
+Initial player with file and playlist, search as you type etc.
+Not a port from the VB6 version, this was a complete rewrite

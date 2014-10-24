@@ -1,0 +1,16 @@
+Roadmap:
+Complete UI Binder (ReadInt etc)
+Postpone in Wizard Screen
+Remove Resources\ from folder name
+About tab should have an Icon of ours with a link / another tab just for us
+
+20 Feb
+Make Settings use a tab control
+UI Thread checker with Invoke
+
+13 Feb
+CheckForUpdates with ThreadHelper
+ReadSettings and UI Binder
+
+10 Feb 2013
+Basic Update Manager with Dummy screens
