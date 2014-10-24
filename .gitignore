@@ -1,5 +1,2 @@
-/IViewer/files/*
-/IViewer/*.resx
-*.vb
-obj/
+obj
 bin
