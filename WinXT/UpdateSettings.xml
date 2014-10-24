@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<UpdateSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Url>http://localhost/microvic/ivy/updates/</Url>
+  <ProgramName>Win XT</ProgramName>
+  <Support>imran@cselian.com</Support>
+  <Frequency>Daily</Frequency>
+  <NeverCheck>false</NeverCheck>
+  <NextUpdateAt>2013-02-14T00:00:00+05:30</NextUpdateAt>
+  <LastCheckedAt>2013-02-13T13:01:11.4083516+05:30</LastCheckedAt>
+  <LastUpdateAt xsi:nil="true" />
+  <LastRemindedAt xsi:nil="true" />
+  <RemindAfter>
+    <Unit>Day</Unit>
+    <Value>0</Value>
+  </RemindAfter>
+</UpdateSettings>

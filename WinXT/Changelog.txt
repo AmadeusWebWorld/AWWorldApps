@@ -1,0 +1,48 @@
+TODO:
+extend search with indexing, fol search etc
+right click on menu and open with text navigator, as root etc
+Recent - delete in the list, double click in lst to open
+Load Folders in the Menu and have ways to check the dates in the enum (overload with another UI type) - reload on dirty only
+Load Favorites too
+Remember Window Position and Last active Tab
+Add a reload xml for... and an open xml
+Edit should work with Cancel + Enter and have a folder select dialog / autocomplete like windows
+drag drop to move / Control Up / Down / Left / Right
+http://stackoverflow.com/questions/2203975/move-node-in-tree-up-or-down
+copy path to clipboard etc from context menu
+context menu so check for modifs direct without opening
+how to delete / move clocks?
+
+@8 March
+Clocky Style buttons + dgv beautification
+
+
+@28 Feb 2013
+Added Clocky
+
+@25 Feb 2013
+drag drop to change parent
+
+@ 24 Feb 2013
+ToolTip, ViewMenu F6-8, InitFocus on txtSearch and MouseDown gives dgv focus, AddIfFolder takes shortcut name
+Add DOpus Icon
+Add NotifyIcon for Systray, Win + W global hook
+
+@ 23 Feb 2013
+Cleanup project, move Builder and exclude Addins
+Add LoadTimer, DirItem, 
+Change selected node as dragging happens
+Save Folders
+View Buttons (BtnBuilder)
+Basic Search
+
+@ 25 October 2010, 01:58:10
+Checkin and start working on integrating recent for Explore N View (call it mode)
+
+@ 24 October 2010, 02:21:01
+Explore N View feature added for previewing txt files
+
+@ 09 October 2010, 11:07:19
+This program (ExploreFrom) written in 1 hour 20 mins. Somewhere above Germany
+
+Greg Perry, we missed you :)
