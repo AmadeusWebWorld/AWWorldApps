@@ -35,7 +35,7 @@ namespace Cselian.FTPSync
 			Run("notepad.exe", what);
 		}
 
-		public static string EnsureEndsWith(this string text, string what = "/")
+		public static string EnsureEndsWith(string text, string what = "/")
 		{
 			return text + (text.EndsWith(what) ? string.Empty : what);
 		}
@@ -43,7 +43,7 @@ namespace Cselian.FTPSync
 		/// <summary>
 		/// Gets the File Size in a readable form
 		/// </summary>
-		public static string GetFileSize(this FileInfo fi)
+		public static string GetFileSize(FileInfo fi)
 		{
 			var bytes = fi.Length;
 			if (bytes > 1024 * 1024 * 1024)

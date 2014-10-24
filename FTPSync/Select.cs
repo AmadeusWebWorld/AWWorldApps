@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -53,7 +52,7 @@ namespace Cselian.FTPSync
 		private void dgvItems_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
 		{
 			if (filtering) return;
-			var colwid = dgvItems.SumColumnWidths() + 30;
+			var colwid = UIHelper.SumColumnWidths(dgvItems) + 30;
 			if (dgvItems.Width == colwid)
 				return;
 

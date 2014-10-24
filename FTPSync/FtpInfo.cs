@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -108,8 +107,10 @@ namespace Cselian.FTPSync
 		public static void Save(List<FtpInfo> list)
 		{
 			Options = Clone(list);
-			var lines = list.Select(x => x.ToLine());
-			File.WriteAllLines(ConfigFile, lines);
+            var lines = new List<string>();
+            foreach (var line in list)
+                lines.Add(line.ToLine());
+			File.WriteAllLines(ConfigFile, lines.ToArray());
 		}
 
 		// Consider making separate method as in IViewer
@@ -182,7 +183,10 @@ namespace Cselian.FTPSync
 
 		private static List<FtpInfo> Clone(List<FtpInfo> list)
 		{
-			return list.Select(x => (FtpInfo)x.MemberwiseClone()).ToList();
+            var r = new List<FtpInfo>();
+            foreach (var item in list)
+                r.Add((FtpInfo)item.MemberwiseClone());
+            return r;
 		}
 
 		private string GetValNow(Names name)

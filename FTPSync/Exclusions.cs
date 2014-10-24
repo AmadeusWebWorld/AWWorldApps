@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Xml.Serialization;
 using Cselian.Core;
 
@@ -37,8 +36,17 @@ namespace Cselian.FTPSync
 			var f = Path.GetFileName(path);
 			var e = Path.GetExtension(path);
 
-			var m = MyRules.FirstOrDefault(x => x.Match(p, f, e));
-			if (m != null)
+            Info m = null;
+            foreach (var item in MyRules)
+            {
+                if (item.Match(p, f, e))
+                {
+                    m = item;
+                    break;
+                }
+            }
+
+            if (m != null)
 			{
 				FtpHelper.SetMessage(string.Format("excluded '{0}' matching rule {1} '{2}'", path, m.How, m.What));
 			}
@@ -64,7 +72,10 @@ namespace Cselian.FTPSync
 
 			if (LastSelected != FtpInfo.Selected.Name)
 			{
-				MyRules = Rules.Where(x => string.IsNullOrEmpty(x.Workspace) || x.Workspace == FtpInfo.Selected.Name).ToList();
+                MyRules = new List<Info>();
+                foreach (var item in Rules)
+                    if (string.IsNullOrEmpty(item.Workspace) || item.Workspace == FtpInfo.Selected.Name)
+                        MyRules.Add(item);
 				LastSelected = FtpInfo.Selected.Name;
 			}
 		}

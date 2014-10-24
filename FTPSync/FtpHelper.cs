@@ -195,7 +195,7 @@ namespace Cselian.FTPSync
 				{
 					var fil = new FileInfo(fileName);
 					double kb = fil.Length;
-					size = fil.GetFileSize();
+					size = IOHelper.GetFileSize(fil);
 				}
 
 				if (item.SubItems.Count == 2)

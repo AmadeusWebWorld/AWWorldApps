@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -47,7 +46,7 @@ namespace Cselian.FTPSync
 				return;
 			}
 
-			FtpInfo.Selected.LocalFolder = FtpInfo.Selected.LocalFolder.Replace("/", "\\").EnsureEndsWith("\\");
+            FtpInfo.Selected.LocalFolder = IOHelper.EnsureEndsWith(FtpInfo.Selected.LocalFolder.Replace("/", "\\"), "\\");
 
 			if (Directory.Exists(FtpInfo.Selected.LocalFolder))
 			{
@@ -76,7 +75,7 @@ namespace Cselian.FTPSync
 				FtpInfo.Selected.Username = FtpInfo.Selected.GetKey(Names.FtpUsername);
 			FtpHelper.Credentials.UserName = FtpInfo.Selected.Username;
 
-			FtpInfo.Selected.FtpFolder = FtpInfo.Selected.FtpFolder.Replace("\\", "/").EnsureEndsWith("/");
+            FtpInfo.Selected.FtpFolder = IOHelper.EnsureEndsWith(FtpInfo.Selected.FtpFolder.Replace("\\", "/"), "/");
 
 			SyncMnu.Enabled = !string.IsNullOrEmpty(FtpInfo.Selected.FtpFolder);
 
@@ -121,7 +120,7 @@ namespace Cselian.FTPSync
 
 			if (item != null)
 			{
-				FtpHelper.SetMessage(e.ChangeType.ToString(), item, e.FullPath.RelativeToLocalFolder());
+				FtpHelper.SetMessage(e.ChangeType.ToString(), item, UIHelper.RelativeToLocalFolder(e.FullPath));
 				item.Checked = true;
 			}
 
@@ -229,7 +228,7 @@ namespace Cselian.FTPSync
 				if (fil.StartsWith(FtpInfo.Selected.LocalFolder, StringComparison.OrdinalIgnoreCase) == false)
 					continue;
 
-				var file = fil.RelativeToLocalFolder();
+				var file = UIHelper.RelativeToLocalFolder(fil);
 				var item = Files.Items.Find(fil, false);
 
 				// if (Exclusions.Exclude(file)) continue; Drag drop is deliberate
@@ -274,9 +273,9 @@ namespace Cselian.FTPSync
 						var msg = "Deleting...";
 						try
 						{
-							if (File.Exists(itm.FilePath()))
+							if (File.Exists(UIHelper.FilePath(itm)))
 							{
-								File.Delete(itm.FilePath());
+								File.Delete(UIHelper.FilePath(itm));
 							}
 							else
 							{
@@ -289,11 +288,11 @@ namespace Cselian.FTPSync
 							msg = "File Delete Error - " + ex.ToString();
 						}
 
-						FtpHelper.SetMessage(msg, itm, itm.FilePath().RelativeToLocalFolder());
+						FtpHelper.SetMessage(msg, itm, UIHelper.RelativeToLocalFolder(UIHelper.FilePath(itm)));
 					}
 					else
 					{
-						FtpHelper.SetMessage(FtpHelper.SyncFTP(itm.Text, delFtp), itm, itm.FilePath().RelativeToLocalFolder());
+						FtpHelper.SetMessage(FtpHelper.SyncFTP(itm.Text, delFtp), itm, UIHelper.RelativeToLocalFolder(UIHelper.FilePath(itm)));
 					}
 
 					if (!delFtp)
@@ -351,14 +350,12 @@ namespace Cselian.FTPSync
 
 		private void ClearSelectedMnu_Click(object sender, EventArgs e)
 		{
-			var list = Files.SelectedItems.Cast<ListViewItem>().ToArray();
-			foreach (var item in list) Files.Items.Remove(item);
+            foreach (ListViewItem item in Files.SelectedItems) Files.Items.Remove(item);
 		}
 
 		private void ClearUncheckedMnu_Click(object sender, EventArgs e)
 		{
-			var list = Files.Items.Cast<ListViewItem>().Where(x => x.Checked == false).ToArray();
-			foreach (var item in list) Files.Items.Remove(item);
+            foreach (ListViewItem item in Files.Items) if (item.Checked == false) Files.Items.Remove(item);
 		}
 
 		private void SelectMnu_Click(object sender, EventArgs e)
@@ -406,7 +403,7 @@ namespace Cselian.FTPSync
 				var fil = Path.Combine(FtpInfo.Selected.LocalFolder, item.Text);
 			}
 
-			Clipboard.SetText(string.Join(Environment.NewLine, list));
+			Clipboard.SetText(string.Join(Environment.NewLine, list.ToArray()));
 			MessageBox.Show(string.Format("Copied paths of {0} {1} items", list.Count, copyChecked ? "checked" : "selected"), Text);
 		}
 
