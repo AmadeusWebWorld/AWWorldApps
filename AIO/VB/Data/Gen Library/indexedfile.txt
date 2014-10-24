@@ -1,0 +1,5 @@
+f,F,ile,String
+p,P,ath,String
+e,E,xtension,String
+d,D,ateModified,Datetime
+a,A,ttrs,String

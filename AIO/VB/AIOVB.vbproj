@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C26EE6E7-516E-43A4-80D2-E0FFD2E4DA4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Cselian.Tools.AIOMain</StartupObject>
+    <RootNamespace>Cselian.Tools</RootNamespace>
+    <AssemblyName>Cselian.AIO</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AIO.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AIO.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\IndexedFile.vb" />
+    <Compile Include="Common\Rule.vb" />
+    <Compile Include="Common\RuleMgr.vb" />
+    <Compile Include="Common\App.vb" />
+    <Compile Include="Common\Utlities.vb" />
+    <Compile Include="Common\WebRequester.vb" />
+    <Compile Include="MultiReplace.Designer.vb">
+      <DependentUpon>MultiReplace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MultiReplace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileFinder.Designer.vb">
+      <DependentUpon>FileFinder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FileFinder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSplitter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSplitter.Designer.vb">
+      <DependentUpon>FileSplitter.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIOMain.Designer.vb">
+      <DependentUpon>AIOMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AIOMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\AssemblyInfo.vb" />
+    <Compile Include="FolderCompare.Designer.vb">
+      <DependentUpon>FolderCompare.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FolderCompare.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QFind.Designer.vb">
+      <DependentUpon>QFind.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QFind.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QGen.Designer.vb">
+      <DependentUpon>QGen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QGen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequenceDiagrams.Designer.vb">
+      <DependentUpon>SequenceDiagrams.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SequenceDiagrams.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AIOMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AIOMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiReplace.resx">
+      <DependentUpon>MultiReplace.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileFinder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileFinder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileSplitter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileSplitter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderCompare.resx">
+      <DependentUpon>FolderCompare.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QFind.resx">
+      <DependentUpon>QFind.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QGen.resx">
+      <DependentUpon>QGen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequenceDiagrams.resx">
+      <DependentUpon>SequenceDiagrams.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\App.config" />
+    <None Include="Data\Rules.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Gen Library\Entity with Include.gen" />
+    <None Include="Data\Gen Library\Property.gen" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AIO.ico" />
+    <None Include="Resources\SequenceDiagrams.ico" />
+    <None Include="Resources\FolderCompare.ico" />
+    <None Include="Resources\QGen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\MultiReplace.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

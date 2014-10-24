@@ -1,0 +1,23 @@
+
+	Private _{0}{2} As {3} = ""
+
+	Public Property {1}{2}() As {3}
+		Get
+			Return _{0}{2}
+		End Get
+		Set(ByVal value As {3})
+			_{0}{2} = value
+		End Set
+	End Property
+
+
+~|~|~|~
+i,I,d,Integer
+n,N,ame,String
+f,F,ather,Integer
+m,M,other,Integer
+g,G,ender,String
+b,B,irth,String
+d,D,eath,String
+l,L,ocation,String
+s,S,pouse,String

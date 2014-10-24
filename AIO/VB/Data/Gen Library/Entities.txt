@@ -1,0 +1,5 @@
+Dont	DontLevel2	Level2	Type	Property	Attributes	PropertyDesc
+		E1P1	string	Id	Address	\r\n\t\t[Label('123')]	Prop1
+	N	E2P1	string	Name	Person		
+N		E2P2	Address	Address	Person		
+		E1P2	string	Street	Address		

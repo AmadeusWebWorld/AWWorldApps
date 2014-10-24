@@ -1,0 +1,17 @@
+Dim {0}{2}Ord as Integer = dr.GetOrdinal("{0}{2}")
+While dr.Read
+  Dim p as new Person
+  If dr.IsDBNull({0}{2}Ord) = False Then  p.{1}{2} = dr.Get{3}({0}{2}Ord)
+  result.Add(p)
+Loop
+People.Columns.Add("{1}{2}")
+~|~|~|~
+i,I,d,Integer
+n,N,ame,String
+f,F,ather,Integer
+m,M,other,Integer
+g,G,ender,String
+b,B,irth,String
+d,D,eath,String
+l,L,ocation,String
+s,S,pouse,String

@@ -1,0 +1,9 @@
+g,G,roup
+n,N,ame
+a,A,ppliesTo
+r,R,esultType
+m,M,atchType
+s,S,tringMatchStartsWith
+s,S,tringMatchEndsWith
+r,R,egexMatchString
+r,R,egexMatchSubString
