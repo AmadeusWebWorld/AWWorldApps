@@ -94,6 +94,12 @@
       <DependentUpon>Select.cs</DependentUpon>
     </Compile>
     <Compile Include="UIHelper.cs" />
+    <Compile Include="VCSUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCSUI.Designer.cs">
+      <DependentUpon>VCSUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Grabber.resx">
       <DependentUpon>Grabber.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="Select.resx">
       <DependentUpon>Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCSUI.resx">
+      <DependentUpon>VCSUI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

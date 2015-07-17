@@ -11,6 +11,8 @@ namespace Cselian.FTPSync
 
 		public static bool RunGrabber { get; set; }
 
+		public static int VCSMode { get; set; }
+
 		[STAThread]
 		public static void Main(string[] str)
 		{
@@ -23,7 +25,19 @@ namespace Cselian.FTPSync
 					return;
 				}
 
-				Application.Run(RunGrabber ? (Form)new Grabber() : new Main());
+				if (RunGrabber)
+				{
+					Application.Run(new Grabber());
+				}
+				else
+				{
+					if (VCSMode == 1)
+						new Main().Show();
+					if (VCSMode == 0)
+						Application.Run(new Main());
+					else
+						Application.Run(new VCSUI());
+				}
 				return;
 			}
 

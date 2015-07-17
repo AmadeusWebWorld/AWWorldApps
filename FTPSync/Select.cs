@@ -24,7 +24,7 @@ namespace Cselian.FTPSync
 
 		public FtpInfo Selected
 		{
-			get { return lastSelected ?? (dgvItems.SelectedCells.Count > 0 ? List[dgvItems.SelectedCells[0].RowIndex] : null); }
+			get { return lastSelected ?? (dgvItems.SelectedCells.Count > 0 ? (FtpInfo)dgvItems.SelectedCells[0].OwningRow.DataBoundItem : null); }
 		}
 
 		private void Select_KeyDown(object sender, KeyEventArgs e)
@@ -35,13 +35,15 @@ namespace Cselian.FTPSync
 			}
 			else if (e.KeyCode == Keys.Return)
 			{
-				SelectMnu.PerformClick();
+				SelectMnu.PerformButtonClick();
 			}
 			else if (e.KeyCode == Keys.Escape)
 			{
 				Close();
 			}
 		}
+
+		#region Grid View
 
 		private void dgvItems_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -58,6 +60,28 @@ namespace Cselian.FTPSync
 
 			Width += colwid - dgvItems.Width;
 		}
+
+		private void dgvItems_KeyDown(object sender, KeyEventArgs e)
+		{
+			char key;
+			if (dgvItems.CurrentCell.ColumnIndex == 0 && char.IsLetterOrDigit(key = System.Convert.ToChar(e.KeyValue)))
+			{
+				txtFind.Text = key.ToString();
+				txtFind.Focus();
+			}
+		}
+
+		private void dgvItems_SelectionChanged(object sender, System.EventArgs e)
+	 	{
+			if (Selected == null) return;
+			var root = System.IO.Path.Combine(Selected.LocalFolder, "_root.txt");
+			var exists = System.IO.File.Exists(root);
+			var itm = (ToolStripMenuItem)SelectMnu.DropDownItems[exists ? 1 : 0];
+			itm.Checked = true;
+			OptPVCS_Click(itm, null);
+		}
+
+		#endregion
 
 		private void RefreshOptions()
 		{
@@ -104,11 +128,19 @@ namespace Cselian.FTPSync
 
 		#region Mnu
 
-		private void SelectMnu_Click(object sender, System.EventArgs e)
+		private void SelectMnu_ButtonClick(object sender, System.EventArgs e)
 		{
 			DialogResult = System.Windows.Forms.DialogResult.OK;
 			lastSelected = Selected;
 			Close();
+		}
+
+		private void OptPVCS_Click(object sender, System.EventArgs e)
+		{
+			var tsi = (ToolStripMenuItem)sender;
+			Program.VCSMode = SelectMnu.DropDownItems.IndexOf(tsi);
+			foreach (ToolStripMenuItem item in SelectMnu.DropDownItems)
+				if (item != tsi) item.Checked = false;
 		}
 
 		private void RefreshMnu_Click(object sender, System.EventArgs e)
@@ -160,15 +192,5 @@ namespace Cselian.FTPSync
 		}
 
 		#endregion
-
-		private void dgvItems_KeyDown(object sender, KeyEventArgs e)
-		{
-			char key;
-			if (dgvItems.CurrentCell.ColumnIndex == 0 && char.IsLetterOrDigit(key = System.Convert.ToChar(e.KeyValue)))
-			{
-				txtFind.Text = key.ToString();
-				txtFind.Focus();
-			}
-		}
 	}
 }

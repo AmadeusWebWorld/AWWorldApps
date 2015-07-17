@@ -10,7 +10,7 @@ namespace Cselian.FTPSync
 	{
 		public static readonly NetworkCredential Credentials = new NetworkCredential { Domain = string.Empty };
 
-		private const string DIRECTORYNOTEXISTSERROR = "The remote server returned an error: (553) File name not allowed."; //The remote server returned an error: (550) File unavailable (e.g., file not found, no access).";
+		private const string DirError1 = "The remote server returned an error: (553) File name not allowed.", DirError2 = "The remote server returned an error: (550) File unavailable (e.g., file not found, no access).";
 
 		public static TextBox Log { get; set; }
 
@@ -102,7 +102,7 @@ namespace Cselian.FTPSync
 				}
 				catch (Exception ex)
 				{
-					if (ex.Message == DIRECTORYNOTEXISTSERROR)
+					if (ex.Message == DirError1 || ex.Message == DirError2)
 					{
 						string fol = uri.Substring(0, uri.LastIndexOf("/"));
 						CreateFTPFol(fol);
@@ -164,7 +164,7 @@ namespace Cselian.FTPSync
 			}
 			catch (Exception ex)
 			{
-				if (ex.Message == DIRECTORYNOTEXISTSERROR)
+				if (ex.Message == DirError1 || ex.Message == DirError2)
 				{
 					CreateFTPFol(fol.Substring(0, fol.LastIndexOf("/")));
 					FtpWebRequest mkdir = CreateFTPReq(fol, WebRequestMethods.Ftp.MakeDirectory);
