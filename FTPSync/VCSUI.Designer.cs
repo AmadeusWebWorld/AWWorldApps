@@ -39,10 +39,11 @@
 			this.MnuUpdate = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuPush = new System.Windows.Forms.ToolStripMenuItem();
 			this.FileMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.diffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.revertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.commitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.MnuEdit = new System.Windows.Forms.ToolStripMenuItem();
+			this.MnuFileDiff = new System.Windows.Forms.ToolStripMenuItem();
+			this.MnuRevert = new System.Windows.Forms.ToolStripMenuItem();
+			this.MnuCommit = new System.Windows.Forms.ToolStripMenuItem();
+			this.MnuDiff = new System.Windows.Forms.ToolStripMenuItem();
 			this.VSplit.Panel1.SuspendLayout();
 			this.VSplit.Panel2.SuspendLayout();
 			this.VSplit.SuspendLayout();
@@ -122,61 +123,76 @@
 			this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuScan,
             this.MnuUpdate,
-            this.MnuPush});
+            this.MnuPush,
+            this.MnuDiff});
 			this.Menu.Name = "Menu";
-			this.Menu.Size = new System.Drawing.Size(113, 70);
+			this.Menu.Size = new System.Drawing.Size(113, 92);
 			// 
 			// MnuScan
 			// 
 			this.MnuScan.Name = "MnuScan";
 			this.MnuScan.Size = new System.Drawing.Size(112, 22);
 			this.MnuScan.Text = "Scan";
+			this.MnuScan.Click += new System.EventHandler(this.MnuScan_Click);
 			// 
 			// MnuUpdate
 			// 
 			this.MnuUpdate.Name = "MnuUpdate";
 			this.MnuUpdate.Size = new System.Drawing.Size(112, 22);
 			this.MnuUpdate.Text = "Update";
+			this.MnuUpdate.Click += new System.EventHandler(this.MnuUpdate_Click);
 			// 
 			// MnuPush
 			// 
 			this.MnuPush.Name = "MnuPush";
 			this.MnuPush.Size = new System.Drawing.Size(112, 22);
 			this.MnuPush.Text = "Push";
+			this.MnuPush.Click += new System.EventHandler(this.MnuPush_Click);
 			// 
 			// FileMenu
 			// 
 			this.FileMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.diffToolStripMenuItem,
-            this.revertToolStripMenuItem,
-            this.commitToolStripMenuItem});
+            this.MnuEdit,
+            this.MnuFileDiff,
+            this.MnuRevert,
+            this.MnuCommit});
 			this.FileMenu.Name = "FileMenu";
-			this.FileMenu.Size = new System.Drawing.Size(119, 92);
+			this.FileMenu.Size = new System.Drawing.Size(153, 114);
 			// 
-			// editToolStripMenuItem
+			// MnuEdit
 			// 
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.editToolStripMenuItem.Text = "Edit";
+			this.MnuEdit.Name = "MnuEdit";
+			this.MnuEdit.Size = new System.Drawing.Size(152, 22);
+			this.MnuEdit.Text = "Edit";
+			this.MnuEdit.Click += new System.EventHandler(this.MnuEdit_Click);
 			// 
-			// diffToolStripMenuItem
+			// MnuFileDiff
 			// 
-			this.diffToolStripMenuItem.Name = "diffToolStripMenuItem";
-			this.diffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.diffToolStripMenuItem.Text = "Diff";
+			this.MnuFileDiff.Name = "MnuFileDiff";
+			this.MnuFileDiff.Size = new System.Drawing.Size(152, 22);
+			this.MnuFileDiff.Text = "Diff";
+			this.MnuFileDiff.Click += new System.EventHandler(this.MnuFileDiff_Click);
 			// 
-			// revertToolStripMenuItem
+			// MnuRevert
 			// 
-			this.revertToolStripMenuItem.Name = "revertToolStripMenuItem";
-			this.revertToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.revertToolStripMenuItem.Text = "Revert";
+			this.MnuRevert.Name = "MnuRevert";
+			this.MnuRevert.Size = new System.Drawing.Size(152, 22);
+			this.MnuRevert.Text = "Revert";
+			this.MnuRevert.Click += new System.EventHandler(this.MnuRevert_Click);
 			// 
-			// commitToolStripMenuItem
+			// MnuCommit
 			// 
-			this.commitToolStripMenuItem.Name = "commitToolStripMenuItem";
-			this.commitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.commitToolStripMenuItem.Text = "Commit";
+			this.MnuCommit.Name = "MnuCommit";
+			this.MnuCommit.Size = new System.Drawing.Size(152, 22);
+			this.MnuCommit.Text = "Commit";
+			this.MnuCommit.Click += new System.EventHandler(this.MnuCommit_Click);
+			// 
+			// MnuDiff
+			// 
+			this.MnuDiff.Name = "MnuDiff";
+			this.MnuDiff.Size = new System.Drawing.Size(112, 22);
+			this.MnuDiff.Text = "Diff";
+			this.MnuDiff.Click += new System.EventHandler(this.MnuDiff_Click);
 			// 
 			// VCSUI
 			// 
@@ -214,9 +230,10 @@
 		private System.Windows.Forms.ToolStripMenuItem MnuUpdate;
 		private System.Windows.Forms.ToolStripMenuItem MnuPush;
 		private System.Windows.Forms.ContextMenuStrip FileMenu;
-		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem diffToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem revertToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem commitToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem MnuEdit;
+		private System.Windows.Forms.ToolStripMenuItem MnuFileDiff;
+		private System.Windows.Forms.ToolStripMenuItem MnuRevert;
+		private System.Windows.Forms.ToolStripMenuItem MnuCommit;
+		private System.Windows.Forms.ToolStripMenuItem MnuDiff;
 	}
 }

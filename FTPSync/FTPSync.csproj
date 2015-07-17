@@ -94,6 +94,7 @@
       <DependentUpon>Select.cs</DependentUpon>
     </Compile>
     <Compile Include="UIHelper.cs" />
+    <Compile Include="VCS.cs" />
     <Compile Include="VCSUI.cs">
       <SubType>Form</SubType>
     </Compile>

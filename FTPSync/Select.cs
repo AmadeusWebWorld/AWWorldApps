@@ -76,7 +76,7 @@ namespace Cselian.FTPSync
 			if (Selected == null) return;
 			var root = System.IO.Path.Combine(Selected.LocalFolder, "_root.txt");
 			var exists = System.IO.File.Exists(root);
-			var itm = (ToolStripMenuItem)SelectMnu.DropDownItems[exists ? 1 : 0];
+			var itm = (ToolStripMenuItem)SelectMnu.DropDownItems[exists ? 2 : 0];
 			itm.Checked = true;
 			OptPVCS_Click(itm, null);
 		}

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Cselian.FTPSync
 {
@@ -35,6 +36,21 @@ namespace Cselian.FTPSync
 			Run("notepad.exe", what);
 		}
 
+
+		private static string DiffApp = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), @"3p\TortoiseGitMerge.exe");
+
+		public static void DiffOrDelete(string root, string mine)
+		{
+			if (File.ReadAllText(root) == File.ReadAllText(mine))
+			{
+				MessageBox.Show("Files are same, deleting mine");
+				File.Delete(mine);
+				return;
+			}
+
+			Run(DiffApp, root + " " + mine);
+		}
+
 		public static string EnsureEndsWith(string text, string what = "/")
 		{
 			return text + (text.EndsWith(what) ? string.Empty : what);
@@ -45,7 +61,11 @@ namespace Cselian.FTPSync
 		/// </summary>
 		public static string GetFileSize(FileInfo fi)
 		{
-			var bytes = fi.Length;
+			return GetFileSize(fi.Length);
+		}
+
+		public static string GetFileSize(long bytes)
+		{
 			if (bytes > 1024 * 1024 * 1024)
 			{
 				return string.Format("{0:F2} GB", bytes / 1024 / 1024 / 1024);
@@ -62,6 +82,17 @@ namespace Cselian.FTPSync
 			}
 
 			return string.Format("{0:F2}  b", bytes);
+		}
+
+		public static string GetFolSize(DirectoryInfo di)
+		{
+			long size = 0;
+			foreach (var item in di.GetFiles())
+			{
+				if (item.Name.StartsWith("_")) continue;
+				size += item.Length;
+			}
+			return GetFileSize(size);
 		}
 	}
 }
