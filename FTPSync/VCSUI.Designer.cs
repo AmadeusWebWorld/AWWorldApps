@@ -31,19 +31,19 @@
 			this.components = new System.ComponentModel.Container();
 			this.VSplit = new System.Windows.Forms.SplitContainer();
 			this.HSplit = new System.Windows.Forms.SplitContainer();
-			this.Files = new System.Windows.Forms.ListBox();
 			this.Fols = new System.Windows.Forms.TreeView();
-			this.Content = new System.Windows.Forms.TextBox();
 			this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.MnuScan = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuUpdate = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuPush = new System.Windows.Forms.ToolStripMenuItem();
+			this.MnuDiff = new System.Windows.Forms.ToolStripMenuItem();
+			this.Files = new System.Windows.Forms.ListBox();
+			this.Content = new System.Windows.Forms.TextBox();
 			this.FileMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.MnuEdit = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuFileDiff = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuRevert = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuCommit = new System.Windows.Forms.ToolStripMenuItem();
-			this.MnuDiff = new System.Windows.Forms.ToolStripMenuItem();
 			this.VSplit.Panel1.SuspendLayout();
 			this.VSplit.Panel2.SuspendLayout();
 			this.VSplit.SuspendLayout();
@@ -89,34 +89,16 @@
 			this.HSplit.SplitterDistance = 145;
 			this.HSplit.TabIndex = 0;
 			// 
-			// Files
-			// 
-			this.Files.ContextMenuStrip = this.Menu;
-			this.Files.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.Files.FormattingEnabled = true;
-			this.Files.Location = new System.Drawing.Point(0, 0);
-			this.Files.Name = "Files";
-			this.Files.Size = new System.Drawing.Size(160, 112);
-			this.Files.TabIndex = 0;
-			// 
 			// Fols
 			// 
 			this.Fols.ContextMenuStrip = this.Menu;
 			this.Fols.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Fols.HideSelection = false;
 			this.Fols.Location = new System.Drawing.Point(0, 0);
 			this.Fols.Name = "Fols";
 			this.Fols.Size = new System.Drawing.Size(160, 145);
 			this.Fols.TabIndex = 1;
-			// 
-			// Content
-			// 
-			this.Content.ContextMenuStrip = this.FileMenu;
-			this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.Content.Location = new System.Drawing.Point(0, 0);
-			this.Content.Multiline = true;
-			this.Content.Name = "Content";
-			this.Content.Size = new System.Drawing.Size(320, 261);
-			this.Content.TabIndex = 2;
+			this.Fols.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Fols_AfterSelect);
 			// 
 			// Menu
 			// 
@@ -149,6 +131,33 @@
 			this.MnuPush.Text = "Push";
 			this.MnuPush.Click += new System.EventHandler(this.MnuPush_Click);
 			// 
+			// MnuDiff
+			// 
+			this.MnuDiff.Name = "MnuDiff";
+			this.MnuDiff.Size = new System.Drawing.Size(112, 22);
+			this.MnuDiff.Text = "Diff";
+			this.MnuDiff.Click += new System.EventHandler(this.MnuDiff_Click);
+			// 
+			// Files
+			// 
+			this.Files.ContextMenuStrip = this.Menu;
+			this.Files.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Files.FormattingEnabled = true;
+			this.Files.Location = new System.Drawing.Point(0, 0);
+			this.Files.Name = "Files";
+			this.Files.Size = new System.Drawing.Size(160, 112);
+			this.Files.TabIndex = 0;
+			// 
+			// Content
+			// 
+			this.Content.ContextMenuStrip = this.FileMenu;
+			this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Content.Location = new System.Drawing.Point(0, 0);
+			this.Content.Multiline = true;
+			this.Content.Name = "Content";
+			this.Content.Size = new System.Drawing.Size(320, 261);
+			this.Content.TabIndex = 2;
+			// 
 			// FileMenu
 			// 
 			this.FileMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -157,42 +166,35 @@
             this.MnuRevert,
             this.MnuCommit});
 			this.FileMenu.Name = "FileMenu";
-			this.FileMenu.Size = new System.Drawing.Size(153, 114);
+			this.FileMenu.Size = new System.Drawing.Size(130, 92);
 			// 
 			// MnuEdit
 			// 
 			this.MnuEdit.Name = "MnuEdit";
 			this.MnuEdit.Size = new System.Drawing.Size(152, 22);
-			this.MnuEdit.Text = "Edit";
+			this.MnuEdit.Text = "Edit / Save";
 			this.MnuEdit.Click += new System.EventHandler(this.MnuEdit_Click);
 			// 
 			// MnuFileDiff
 			// 
 			this.MnuFileDiff.Name = "MnuFileDiff";
-			this.MnuFileDiff.Size = new System.Drawing.Size(152, 22);
+			this.MnuFileDiff.Size = new System.Drawing.Size(118, 22);
 			this.MnuFileDiff.Text = "Diff";
 			this.MnuFileDiff.Click += new System.EventHandler(this.MnuFileDiff_Click);
 			// 
 			// MnuRevert
 			// 
 			this.MnuRevert.Name = "MnuRevert";
-			this.MnuRevert.Size = new System.Drawing.Size(152, 22);
+			this.MnuRevert.Size = new System.Drawing.Size(118, 22);
 			this.MnuRevert.Text = "Revert";
 			this.MnuRevert.Click += new System.EventHandler(this.MnuRevert_Click);
 			// 
 			// MnuCommit
 			// 
 			this.MnuCommit.Name = "MnuCommit";
-			this.MnuCommit.Size = new System.Drawing.Size(152, 22);
+			this.MnuCommit.Size = new System.Drawing.Size(118, 22);
 			this.MnuCommit.Text = "Commit";
 			this.MnuCommit.Click += new System.EventHandler(this.MnuCommit_Click);
-			// 
-			// MnuDiff
-			// 
-			this.MnuDiff.Name = "MnuDiff";
-			this.MnuDiff.Size = new System.Drawing.Size(112, 22);
-			this.MnuDiff.Text = "Diff";
-			this.MnuDiff.Click += new System.EventHandler(this.MnuDiff_Click);
 			// 
 			// VCSUI
 			// 

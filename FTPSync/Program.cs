@@ -16,10 +16,16 @@ namespace Cselian.FTPSync
 		[STAThread]
 		public static void Main(string[] str)
 		{
-			if (str == null | str.Length == 0)
+			if (str == null | str.Length == 0 | (str.Length == 1 & str[0] == "ym"))
 			{
 				// if not SilentMode, FtpInfo.ctor will call SelectOption
-				if (FtpInfo.Selected == null && RunGrabber == false)
+				if (str.Length == 1)
+				{
+					SilentMode = true;
+					VCSMode = 2;
+					FtpInfo.SetSelected(str[0]);
+				}
+				else if (FtpInfo.Selected == null && RunGrabber == false)
 				{
 					MessageBox.Show(FtpInfo.HasMultipleOptions ? "Nothing Selected. Exiting" : "Create some options in the open file first", Caption);
 					return;

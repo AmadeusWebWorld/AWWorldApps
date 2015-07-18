@@ -13,25 +13,45 @@ namespace Cselian.FTPSync
 			public string FolPath { get; private set; }
 			public string Size { get; private set; }
 			public List<Fol> Fols { get; set; }
+			public List<Fil> Fils { get; set; }
+
+			public string IndexFile { get; private set; }
+			public string MyIndexFile { get; private set; }
 
 			public Fol(DirectoryInfo di)
 			{
 				Name = di.Name;
-				FolPath = di.FullName;
+				SetFol(di.FullName);
 				Fols = ReadFol(di);
 				if (Fols == null)
-					Size = IOHelper.GetFolSize(di);
+				{
+					Size = IOHelper.GetFolSize(di, Indexes);
+					Fils = ReadFiles(this);
+				}
 			}
 
 			public Fol(string parentFol, string line)
 			{
 				var bits = line.Split('=');
 				Name = bits[0].TrimStart();
-				FolPath = Path.Combine(parentFol, Name);
+				SetFol(Path.Combine(parentFol, Name));
+
+				if (File.Exists(MyIndexFile))
+					Fils = ReadFiles(this, MyIndexFile);
+				else if (File.Exists(IndexFile))
+					Fils = ReadFiles(this, IndexFile);
+				
 				if (bits.Length == 1)
 					Size = IOHelper.GetFolSize(new DirectoryInfo(FolPath));
 				else
 					Size = bits[1];
+			}
+
+			private void SetFol(string fol)
+			{
+				FolPath = fol;
+				IndexFile = Path.Combine(fol, Indexes[0]);
+				MyIndexFile = Path.Combine(fol, Indexes[1]);
 			}
 
 			public override string ToString()
@@ -39,6 +59,8 @@ namespace Cselian.FTPSync
 				return Name + (Fols == null ? " [" + Size + "]"  : string.Empty);
 			}
 		}
+
+		#region Fols
 
 		public static List<Fol> ReadRoot()
 		{
@@ -61,6 +83,7 @@ namespace Cselian.FTPSync
 			var list = new List<Fol>();
 			foreach (var f in fol.GetDirectories())
 			{
+				if (f.Name == "_revisions") continue;
 				list.Add(new Fol(f));
 			}
 			return list.Count > 0 ? list : null;
@@ -123,6 +146,7 @@ namespace Cselian.FTPSync
 				while (indent < _indent)
 				{
 					f = fols.Pop();
+					f = fols.Peek();
 					_parent = new DirectoryInfo(_parent).Parent.FullName;
 					_indent--;
 				}
@@ -131,11 +155,99 @@ namespace Cselian.FTPSync
 			else if (indent > _indent)
 			{
 				_indent = indent;
+				_parent = Path.Combine(_parent, f.Fols[f.Fols.Count - 1].Name);
 				var n = new Fol(_parent, fol);
-				f.Fols.Add(n);
-				_parent = Path.Combine(_parent, n.Name);
-				fols.Push(n);
+				if (f.Fols[f.Fols.Count - 1].Fols == null) f.Fols[f.Fols.Count - 1].Fols = new List<Fol>();
+				f.Fols[f.Fols.Count - 1].Fols.Add(n);
+				fols.Push(f.Fols[f.Fols.Count - 1]);
 			}
 		}
+
+		#endregion
+
+		public class Fil
+		{
+			public string FullPath { get; private set; }
+			public string Name { get; private set; }
+			public string Mine { get; private set; }
+
+			public bool Editing { get; private set; }
+
+			public Fil(FileInfo fi)
+			{
+				FullPath = fi.FullName;
+				Name = fi.Name;
+				Mine = Path.ChangeExtension(FullPath, ".mine" + fi.Extension);
+				Editing = File.Exists(Mine);
+			}
+
+			public Fil(string path, string name) : this(new FileInfo(Path.Combine(path, name)))
+			{
+			}
+
+			public override string ToString()
+			{
+				return Name + (Editing ? "*" : string.Empty);
+			}
+		}
+
+		#region Fils
+
+		public static void RefreshFiles(Fol fol)
+		{
+			fol.Fils = ReadFiles(fol);
+		}
+
+		private static List<string> Indexes = new List<string> { "_index.txt", "_index.mine.txt" };
+
+		private static List<Fil> ReadFiles(Fol fol)
+		{
+			var files = new List<Fil>();
+			var di = new DirectoryInfo(fol.FolPath);
+			foreach (var fil in di.GetFiles())
+			{
+				if (fil.Name.ToLower().Contains(".mine.")) continue;
+				if (Indexes.Contains(fil.Name)) continue;
+				files.Add(new Fil(fil));
+			}
+
+			WriteFils(fol, files);
+			return files;
+		}
+
+		private static List<Fil> ReadFiles(Fol fol, string indexFile)
+		{
+			var files = new List<Fil>();
+			var lines = File.ReadAllLines(indexFile);
+			foreach (var file in lines)
+			{
+				files.Add(new Fil(fol.FolPath, file));
+			}
+			return files;
+		}
+
+		private static void WriteFils(Fol fol, List<Fil> fils)
+		{
+			var lines = new List<string>();
+
+			foreach (var f in fils)
+			{
+				lines.Add(f.Name);
+			}
+
+			var root = Path.Combine(fol.FolPath, Indexes[0]);
+			if (!File.Exists(root))
+			{
+				File.WriteAllLines(root, lines.ToArray());
+			}
+			else
+			{
+				var mine = Path.Combine(fol.FolPath, Indexes[1]);
+				File.WriteAllLines(mine, lines.ToArray());
+				IOHelper.DiffOrDelete(root, mine);
+			}
+		}
+
+		#endregion
 	}
 }

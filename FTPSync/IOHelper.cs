@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -84,11 +85,13 @@ namespace Cselian.FTPSync
 			return string.Format("{0:F2}  b", bytes);
 		}
 
-		public static string GetFolSize(DirectoryInfo di)
+		public static string GetFolSize(DirectoryInfo di, List<string> exclude = null)
 		{
+			if (di.Exists == false) return "m";
 			long size = 0;
 			foreach (var item in di.GetFiles())
 			{
+				if (exclude != null && exclude.Contains(item.Name.ToLower())) continue;
 				if (item.Name.StartsWith("_")) continue;
 				size += item.Length;
 			}
