@@ -1,4 +1,12 @@
-﻿
+﻿27 Jul 2015
+Add Played column to Playlist (double click / set next)
+Alt + Up/Down to move (single) item in playlist
+
+14 Jan 2015
+Fix size bug (decimal not int)
+
+5 Dec 2014
+Fixed Open Folder infinite loop
 
 2013
 Wrote and integrated IvyUpdater

@@ -137,6 +137,7 @@
 			this.TreeItemFlatten = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayNext = new System.Windows.Forms.Timer(this.components);
 			this.PanLyrics = new System.Windows.Forms.Timer(this.components);
+			this.ToolsCheckPlaylistMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusBar.SuspendLayout();
 			this.HistoryMenu.SuspendLayout();
 			this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -217,8 +218,8 @@
 			// 
 			// SearchFilter
 			// 
-			this.SearchFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.SearchFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SearchFilter.ContextMenuStrip = this.HistoryMenu;
 			this.SearchFilter.Location = new System.Drawing.Point(40, 4);
 			this.SearchFilter.Multiline = true;
@@ -467,9 +468,9 @@
 			// 
 			// fils
 			// 
-			this.fils.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.fils.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.fils.CheckBoxes = true;
 			this.fils.FullRowSelect = true;
 			this.fils.HideSelection = false;
@@ -658,8 +659,8 @@
 			this.ViewHorzMnu.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ViewHorzMnu.Name = "ViewHorzMnu";
 			this.ViewHorzMnu.ShortcutKeyDisplayString = "";
-			this.ViewHorzMnu.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-						| System.Windows.Forms.Keys.H)));
+			this.ViewHorzMnu.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.H)));
 			this.ViewHorzMnu.Size = new System.Drawing.Size(233, 22);
 			this.ViewHorzMnu.Text = "Horizontal";
 			this.ViewHorzMnu.Click += new System.EventHandler(this.ViewHorzToggle);
@@ -672,8 +673,8 @@
 			// ViewReturnMnu
 			// 
 			this.ViewReturnMnu.Name = "ViewReturnMnu";
-			this.ViewReturnMnu.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-						| System.Windows.Forms.Keys.R)));
+			this.ViewReturnMnu.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.R)));
 			this.ViewReturnMnu.Size = new System.Drawing.Size(233, 22);
 			this.ViewReturnMnu.Text = "&Return Selection";
 			this.ViewReturnMnu.Click += new System.EventHandler(this.ViewReturnMnu_Click);
@@ -798,6 +799,7 @@
             this.ToolsInvalidFileLinksMnu,
             this.ToolsLyricsDisplayMnu,
             this.ToolsViewOrganizerMnu,
+            this.ToolsCheckPlaylistMnu,
             this.SepTools1,
             this.ToolsOptionsMnu});
 			this.MnuTools.Name = "MnuTools";
@@ -1166,6 +1168,13 @@
 			this.PanLyrics.Interval = 50;
 			this.PanLyrics.Tick += new System.EventHandler(this.tmr_Tick);
 			// 
+			// ToolsCheckPlaylistMnu
+			// 
+			this.ToolsCheckPlaylistMnu.Name = "ToolsCheckPlaylistMnu";
+			this.ToolsCheckPlaylistMnu.Size = new System.Drawing.Size(192, 22);
+			this.ToolsCheckPlaylistMnu.Text = "Check Playlist";
+			this.ToolsCheckPlaylistMnu.ToolTipText = "Checks files that exist in the playlist";
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1321,5 +1330,6 @@
 		private System.Windows.Forms.ToolStripMenuItem HelpUpdatesSettingsMnu;
 		private System.Windows.Forms.ToolStripSeparator SepHelp1;
 		private System.Windows.Forms.ToolStripSeparator SepHelp2;
+		private System.Windows.Forms.ToolStripMenuItem ToolsCheckPlaylistMnu;
 	}
 }

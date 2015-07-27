@@ -8,7 +8,7 @@ namespace Cselian.IViewer.UI
 	public partial class Main : Form
 	{
 		#region Vars, ctor, Load and Error
-		
+
 		private VidPlaylist PlsEngine;
 		private bool MovingHorz = true;
 		private bool OpeningPlaylist;
@@ -17,7 +17,8 @@ namespace Cselian.IViewer.UI
 		private LyricInfo.Line LyrLine;
 		private Lyrics LyricsUI;
 
-		public Main() : this(true)
+		public Main()
+			: this(true)
 		{
 			InitializeComponent();
 			Load += new System.EventHandler(Main_Load);
@@ -78,7 +79,7 @@ namespace Cselian.IViewer.UI
 		#endregion
 
 		#region All Menus
-		
+
 		#region "Menu: File"
 
 		private void FileExitMnu_Click(object sender, EventArgs e)
@@ -451,9 +452,7 @@ namespace Cselian.IViewer.UI
 		search:
 			foreach (TreeNode node in searchIn)
 			{
-				if (node.Parent == null && node.Index < 2)
-					continue;
-				if (itm.Folder.StartsWith(Convert.ToString(node.Tag)))
+				if (string.IsNullOrEmpty((string)node.Tag) == false && itm.Folder.StartsWith(Convert.ToString(node.Tag), StringComparison.OrdinalIgnoreCase))
 				{
 					root = node;
 					break; // TODO: might not be correct. Was : Exit For
@@ -471,7 +470,7 @@ namespace Cselian.IViewer.UI
 			navigatingToFol = true;
 			fols.SelectedNode = root;
 			string cur = Convert.ToString(root.Tag);
-			if (itm.Folder == cur)
+			if (itm.Folder.Equals(cur, StringComparison.OrdinalIgnoreCase))
 			{
 				navigatingToFol = false;
 				fols_AfterSelect(null, null);
@@ -498,7 +497,7 @@ namespace Cselian.IViewer.UI
 				cur = Convert.ToString(fol.Tag);
 
 				// need to use \ else substring problem
-				if (itm.Folder.StartsWith(cur + "\\") | itm.Folder == cur)
+				if (itm.Folder.StartsWith(cur + "\\", StringComparison.OrdinalIgnoreCase) | itm.Folder.Equals(cur, StringComparison.OrdinalIgnoreCase))
 				{
 					root = fol;
 					break; // TODO: might not be correct. Was : Exit For

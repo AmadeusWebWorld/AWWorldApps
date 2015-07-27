@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <FolOrientation>Horizontal</FolOrientation>
-  <FolHorzDistance>0</FolHorzDistance>
-  <FolVertDistance>0</FolVertDistance>
+  <FolHorzDistance>151</FolHorzDistance>
+  <FolVertDistance>297</FolVertDistance>
   <PlsOrientation>Horizontal</PlsOrientation>
   <PlsHorzDistance>0</PlsHorzDistance>
   <PlsVertDistance>0</PlsVertDistance>
   <SelectorType>Filelist</SelectorType>
+  <FavoriteFolders>d:\Music\</FavoriteFolders>
+  <LVWDateTimeFormat>dd MMM yyyy hh:mm:ss</LVWDateTimeFormat>
   <FilColWidthName>290</FilColWidthName>
   <FilColWidthExt>40</FilColWidthExt>
   <FilColWidthSize>70</FilColWidthSize>
   <FilColWidthModified>120</FilColWidthModified>
   <FilColWidthFolder>200</FilColWidthFolder>
-  <FolVisibility>false</FolVisibility>
-  <FavoriteFolders>D:\Imran\M|d:\Imran\dmi</FavoriteFolders>
-  <LVWDateTimeFormat>dd MMM yyyy hh:mm:ss</LVWDateTimeFormat>
+  <FolVisibility>true</FolVisibility>
 </AppSettings>

@@ -2,11 +2,11 @@
 <UpdateSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Url>http://ivy.cselian.com/updates/</Url>
   <ProgramName>IViewer</ProgramName>
-  <Support>ivy@cselian.com</Support>
+  <Support>imran@cselian.com</Support>
   <Frequency>Daily</Frequency>
-  <NeverCheck>false</NeverCheck>
-  <NextUpdateAt>2013-02-14T00:00:00+05:30</NextUpdateAt>
-  <LastCheckedAt>2013-02-13T13:01:11.4083516+05:30</LastCheckedAt>
+  <NeverCheck>true</NeverCheck>
+  <NextUpdateAt>2014-07-02T00:00:00+05:30</NextUpdateAt>
+  <LastCheckedAt>2014-07-01T15:30:58.0881259+05:30</LastCheckedAt>
   <LastUpdateAt xsi:nil="true" />
   <LastRemindedAt xsi:nil="true" />
   <RemindAfter>

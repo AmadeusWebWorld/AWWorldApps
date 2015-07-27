@@ -210,6 +210,9 @@ namespace Cselian.IViewer.UI
 
 		private void AddFol(DirectoryInfo fol, TreeNodeCollection nodes)
 		{
+			if (fol.Attributes.HasFlag(FileAttributes.Hidden)) // System Volume Information etc
+				return;
+
 			TreeNode folNode = nodes.Add(fol.FullName, fol.Name);
 			folNode.ImageKey = "fol";
 			folNode.SelectedImageKey = "cur";
@@ -236,6 +239,7 @@ namespace Cselian.IViewer.UI
 			// Root
 			if (fols.SelectedNode.Tag == null)
 			{
+				return;
 				var ctx = new ListContext(ListContext.Types.All);
 				SetFileList(ctx);
 			}
@@ -471,6 +475,8 @@ namespace Cselian.IViewer.UI
 				return;
 			}
 
+			if (ctl == playlist) SelectedFile.SubItems[5].Text = "yes";
+
 			if (LyricInfo.Exists(SelectedFile.LibItem().FullPath))
 			{
 				LoadLyrics(SelectedFile.LibItem().FullPath);
@@ -515,12 +521,14 @@ namespace Cselian.IViewer.UI
 				{
 					lvw.SelectedItems.Clear();
 					lvw.Items[0].Selected = true;
+					if (lvw == playlist) lvw.Items[0].SubItems[5].Text = "yes";
 				}
 				else
 				{
 					var ix = lvw.SelectedIndices[0] + 1;
 					lvw.SelectedItems.Clear();
 					lvw.Items[ix].Selected = true;
+					if (lvw == playlist) lvw.Items[ix].SubItems[5].Text = "yes";
 				}
 
 				TryPlayFile();

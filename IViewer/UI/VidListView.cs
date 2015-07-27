@@ -119,7 +119,7 @@ namespace Cselian.IViewer.UI
 				var fol = li.Info.DirectoryName;
 				if (mode == ListContext.Types.Flat) fol = "." + fol.Substring(FlatFolderStringLength);
 				item.SubItems.Add(fol);
-
+				if (lvw.Name == "playlist") item.SubItems.Add(""); //played
 			}
 
 			Core.FileIcon.CheckExtensionExists(li.Info, lvw.SmallImageList, lvw.LargeImageList);
@@ -149,6 +149,8 @@ namespace Cselian.IViewer.UI
 			{
 				lvw.Columns.Add("Folder");
 				lvw.Columns[4].Width = VidEngine.Settings.FilColWidthFolder;
+				lvw.Columns.Add("Played");
+				lvw.Columns[4].Width = 60;
 			}
 			else
 			{

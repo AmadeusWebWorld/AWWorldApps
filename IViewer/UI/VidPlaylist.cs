@@ -154,6 +154,19 @@ namespace Cselian.IViewer.UI
 
 		private void playlist_KeyDown(object sender, KeyEventArgs e)
 		{
+			if (e.Alt && (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
+			{
+				var playlist = Main.Inst.Playlist;
+				if (playlist.SelectedItems.Count == 0) return;
+				var itm = playlist.SelectedItems[0];
+				if (itm.Index == 0 && e.KeyCode == Keys.Up) return;
+				if (itm.Index == playlist.Items.Count - 1 && e.KeyCode == Keys.Down) return;
+				var ix = e.KeyCode == Keys.Up ? itm.Index - 1 : itm.Index + 1;
+				playlist.Items.Remove(itm);
+				playlist.Items.Insert(ix, itm);
+				itm.Selected = true;
+			}
+
 			if (e.KeyCode == Keys.Delete & Main.Inst.Playlist.SelectedItems.Count == 1)
 			{
 				var path = Main.Inst.Playlist.SelectedItems[0].LibItem().FullPath;

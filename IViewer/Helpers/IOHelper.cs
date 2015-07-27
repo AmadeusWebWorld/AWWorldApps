@@ -36,7 +36,7 @@ namespace Cselian.IViewer
 		/// </summary>
 		public static string GetFileSize(this FileInfo fi)
 		{
-			var bytes = fi.Length;
+			var bytes = (decimal)fi.Length;
 			if (bytes > 1024 * 1024 * 1024)
 			{
 				return string.Format("{0:F2} GB", bytes / 1024 / 1024 / 1024);
@@ -52,7 +52,7 @@ namespace Cselian.IViewer
 				return string.Format("{0:F2} KB", bytes / 1024);
 			}
 
-			return string.Format("{0:F2}  b", bytes);
+			return string.Format("{0:F2} b", bytes);
 		}
 
 		public static void Overwrite(string file, string contents)
