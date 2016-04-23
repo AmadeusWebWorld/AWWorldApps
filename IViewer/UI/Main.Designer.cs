@@ -98,6 +98,7 @@
 			this.ToolsInvalidFileLinksMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsLyricsDisplayMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsViewOrganizerMnu = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsCheckPlaylistMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.SepTools1 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsOptionsMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,7 +138,7 @@
 			this.TreeItemFlatten = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayNext = new System.Windows.Forms.Timer(this.components);
 			this.PanLyrics = new System.Windows.Forms.Timer(this.components);
-			this.ToolsCheckPlaylistMnu = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsDataManagerMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusBar.SuspendLayout();
 			this.HistoryMenu.SuspendLayout();
 			this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -800,6 +801,7 @@
             this.ToolsLyricsDisplayMnu,
             this.ToolsViewOrganizerMnu,
             this.ToolsCheckPlaylistMnu,
+            this.ToolsDataManagerMnu,
             this.SepTools1,
             this.ToolsOptionsMnu});
 			this.MnuTools.Name = "MnuTools";
@@ -839,6 +841,13 @@
 			this.ToolsViewOrganizerMnu.Name = "ToolsViewOrganizerMnu";
 			this.ToolsViewOrganizerMnu.Size = new System.Drawing.Size(192, 22);
 			this.ToolsViewOrganizerMnu.Text = "View Organizer";
+			// 
+			// ToolsCheckPlaylistMnu
+			// 
+			this.ToolsCheckPlaylistMnu.Name = "ToolsCheckPlaylistMnu";
+			this.ToolsCheckPlaylistMnu.Size = new System.Drawing.Size(192, 22);
+			this.ToolsCheckPlaylistMnu.Text = "Check Playlist";
+			this.ToolsCheckPlaylistMnu.ToolTipText = "Checks files that exist in the playlist";
 			// 
 			// SepTools1
 			// 
@@ -1168,12 +1177,12 @@
 			this.PanLyrics.Interval = 50;
 			this.PanLyrics.Tick += new System.EventHandler(this.tmr_Tick);
 			// 
-			// ToolsCheckPlaylistMnu
+			// ToolsDataManagerMnu
 			// 
-			this.ToolsCheckPlaylistMnu.Name = "ToolsCheckPlaylistMnu";
-			this.ToolsCheckPlaylistMnu.Size = new System.Drawing.Size(192, 22);
-			this.ToolsCheckPlaylistMnu.Text = "Check Playlist";
-			this.ToolsCheckPlaylistMnu.ToolTipText = "Checks files that exist in the playlist";
+			this.ToolsDataManagerMnu.Name = "ToolsDataManagerMnu";
+			this.ToolsDataManagerMnu.Size = new System.Drawing.Size(192, 22);
+			this.ToolsDataManagerMnu.Text = "&Data Manager";
+			this.ToolsDataManagerMnu.Click += new System.EventHandler(this.ToolsDataManagerMnu_Click);
 			// 
 			// Main
 			// 
@@ -1331,5 +1340,6 @@
 		private System.Windows.Forms.ToolStripSeparator SepHelp1;
 		private System.Windows.Forms.ToolStripSeparator SepHelp2;
 		private System.Windows.Forms.ToolStripMenuItem ToolsCheckPlaylistMnu;
+		private System.Windows.Forms.ToolStripMenuItem ToolsDataManagerMnu;
 	}
 }

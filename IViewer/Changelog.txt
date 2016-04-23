@@ -1,4 +1,10 @@
-﻿27 Jul 2015
+﻿23 Apr 2016
+Added DataManager for cleaning movie list
+
+20 Nov 2015
+Fixed node.tag not string exception (prob with favorites)
+
+27 Jul 2015
 Add Played column to Playlist (double click / set next)
 Alt + Up/Down to move (single) item in playlist
 

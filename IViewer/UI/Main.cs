@@ -315,6 +315,11 @@ namespace Cselian.IViewer.UI
 				return;
 		}
 
+		private void ToolsDataManagerMnu_Click(object sender, EventArgs e)
+		{
+			new DataManager().Show();
+		}
+
 		private void HelpReadmeMnu_Click(object sender, EventArgs e)
 		{
 			IOHelper.RunText("Readme");
@@ -452,6 +457,7 @@ namespace Cselian.IViewer.UI
 		search:
 			foreach (TreeNode node in searchIn)
 			{
+				if (!(node.Tag is string)) continue;
 				if (string.IsNullOrEmpty((string)node.Tag) == false && itm.Folder.StartsWith(Convert.ToString(node.Tag), StringComparison.OrdinalIgnoreCase))
 				{
 					root = node;

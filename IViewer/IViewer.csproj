@@ -72,6 +72,12 @@
     <Compile Include="LyricInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\DataManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DataManager.Designer.cs">
+      <DependentUpon>DataManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Main.Exposer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\DataManager.resx">
+      <DependentUpon>DataManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Lyrics.resx">
       <DependentUpon>Lyrics.cs</DependentUpon>
     </EmbeddedResource>
