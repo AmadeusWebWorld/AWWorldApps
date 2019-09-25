@@ -43,6 +43,7 @@
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.SplitViewer = new System.Windows.Forms.SplitContainer();
+			this.SplitMeta = new System.Windows.Forms.SplitContainer();
 			this.lblDuration = new System.Windows.Forms.Label();
 			this.lblLyrics = new System.Windows.Forms.Label();
 			this.LyrMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -99,6 +100,7 @@
 			this.ToolsLyricsDisplayMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsViewOrganizerMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsCheckPlaylistMnu = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsDataManagerMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.SepTools1 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsOptionsMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,7 +140,6 @@
 			this.TreeItemFlatten = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayNext = new System.Windows.Forms.Timer(this.components);
 			this.PanLyrics = new System.Windows.Forms.Timer(this.components);
-			this.ToolsDataManagerMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusBar.SuspendLayout();
 			this.HistoryMenu.SuspendLayout();
 			this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -149,6 +150,9 @@
 			this.SplitViewer.Panel1.SuspendLayout();
 			this.SplitViewer.Panel2.SuspendLayout();
 			this.SplitViewer.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.SplitMeta)).BeginInit();
+			this.SplitMeta.Panel1.SuspendLayout();
+			this.SplitMeta.SuspendLayout();
 			this.LyrMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.SplitFol)).BeginInit();
@@ -173,14 +177,14 @@
             this.StatusFile});
 			this.StatusBar.Location = new System.Drawing.Point(0, 0);
 			this.StatusBar.Name = "StatusBar";
-			this.StatusBar.Size = new System.Drawing.Size(635, 24);
+			this.StatusBar.Size = new System.Drawing.Size(1087, 24);
 			this.StatusBar.TabIndex = 6;
 			this.StatusBar.Text = "StatusStrip";
 			// 
 			// StatusSearch
 			// 
 			this.StatusSearch.Name = "StatusSearch";
-			this.StatusSearch.Size = new System.Drawing.Size(553, 19);
+			this.StatusSearch.Size = new System.Drawing.Size(1005, 19);
 			this.StatusSearch.Spring = true;
 			this.StatusSearch.Text = "InfoBar";
 			// 
@@ -210,7 +214,7 @@
 			// FolderFilter
 			// 
 			this.FolderFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.FolderFilter.Location = new System.Drawing.Point(154, 4);
+			this.FolderFilter.Location = new System.Drawing.Point(304, 4);
 			this.FolderFilter.Multiline = true;
 			this.FolderFilter.Name = "FolderFilter";
 			this.FolderFilter.Size = new System.Drawing.Size(54, 20);
@@ -225,7 +229,7 @@
 			this.SearchFilter.Location = new System.Drawing.Point(40, 4);
 			this.SearchFilter.Multiline = true;
 			this.SearchFilter.Name = "SearchFilter";
-			this.SearchFilter.Size = new System.Drawing.Size(108, 19);
+			this.SearchFilter.Size = new System.Drawing.Size(258, 19);
 			this.SearchFilter.TabIndex = 5;
 			this.ToolTip.SetToolTip(this.SearchFilter, "Search Library");
 			// 
@@ -266,11 +270,11 @@
 			// ToolStripContainer.ContentPanel
 			// 
 			this.ToolStripContainer.ContentPanel.Controls.Add(this.SplitViewer);
-			this.ToolStripContainer.ContentPanel.Size = new System.Drawing.Size(635, 388);
+			this.ToolStripContainer.ContentPanel.Size = new System.Drawing.Size(1087, 388);
 			this.ToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ToolStripContainer.Location = new System.Drawing.Point(0, 0);
 			this.ToolStripContainer.Name = "ToolStripContainer";
-			this.ToolStripContainer.Size = new System.Drawing.Size(635, 467);
+			this.ToolStripContainer.Size = new System.Drawing.Size(1087, 467);
 			this.ToolStripContainer.TabIndex = 8;
 			this.ToolStripContainer.Text = "ToolStripContainer1";
 			// 
@@ -288,19 +292,33 @@
 			// 
 			// SplitViewer.Panel1
 			// 
-			this.SplitViewer.Panel1.Controls.Add(this.lblDuration);
-			this.SplitViewer.Panel1.Controls.Add(this.lblLyrics);
-			this.SplitViewer.Panel1.Controls.Add(this.Player);
+			this.SplitViewer.Panel1.Controls.Add(this.SplitMeta);
 			this.SplitViewer.Panel1.Padding = new System.Windows.Forms.Padding(2);
 			this.SplitViewer.Panel1.Resize += new System.EventHandler(this.plrCont_Resised);
 			// 
 			// SplitViewer.Panel2
 			// 
 			this.SplitViewer.Panel2.Controls.Add(this.SplitFol);
-			this.SplitViewer.Size = new System.Drawing.Size(635, 388);
+			this.SplitViewer.Size = new System.Drawing.Size(1087, 388);
 			this.SplitViewer.SplitterDistance = 124;
 			this.SplitViewer.TabIndex = 3;
 			this.SplitViewer.TabStop = false;
+			// 
+			// SplitMeta
+			// 
+			this.SplitMeta.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.SplitMeta.Location = new System.Drawing.Point(2, 2);
+			this.SplitMeta.Name = "SplitMeta";
+			// 
+			// SplitMeta.Panel1
+			// 
+			this.SplitMeta.Panel1.Controls.Add(this.lblDuration);
+			this.SplitMeta.Panel1.Controls.Add(this.lblLyrics);
+			this.SplitMeta.Panel1.Controls.Add(this.Player);
+			this.SplitMeta.Panel2Collapsed = true;
+			this.SplitMeta.Size = new System.Drawing.Size(1083, 120);
+			this.SplitMeta.SplitterDistance = 648;
+			this.SplitMeta.TabIndex = 6;
 			// 
 			// lblDuration
 			// 
@@ -308,7 +326,7 @@
 			this.lblDuration.AutoSize = true;
 			this.lblDuration.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.lblDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.lblDuration.Location = new System.Drawing.Point(606, 97);
+			this.lblDuration.Location = new System.Drawing.Point(1046, 93);
 			this.lblDuration.Name = "lblDuration";
 			this.lblDuration.Size = new System.Drawing.Size(24, 15);
 			this.lblDuration.TabIndex = 5;
@@ -323,12 +341,13 @@
 			this.lblLyrics.ContextMenuStrip = this.LyrMenu;
 			this.lblLyrics.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblLyrics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.lblLyrics.Location = new System.Drawing.Point(605, 11);
+			this.lblLyrics.Location = new System.Drawing.Point(1056, 9);
 			this.lblLyrics.Name = "lblLyrics";
 			this.lblLyrics.Size = new System.Drawing.Size(23, 18);
 			this.lblLyrics.TabIndex = 5;
 			this.lblLyrics.Text = "...";
 			this.lblLyrics.Visible = false;
+			this.lblLyrics.DoubleClick += new System.EventHandler(this.lblLyrics_DoubleClick);
 			// 
 			// LyrMenu
 			// 
@@ -382,10 +401,10 @@
 			// 
 			this.Player.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Player.Enabled = true;
-			this.Player.Location = new System.Drawing.Point(2, 2);
+			this.Player.Location = new System.Drawing.Point(0, 0);
 			this.Player.Name = "Player";
 			this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
-			this.Player.Size = new System.Drawing.Size(631, 120);
+			this.Player.Size = new System.Drawing.Size(1083, 120);
 			this.Player.TabIndex = 4;
 			this.Player.TabStop = false;
 			// 
@@ -403,8 +422,8 @@
 			// SplitFol.Panel2
 			// 
 			this.SplitFol.Panel2.Controls.Add(this.SplitPls);
-			this.SplitFol.Size = new System.Drawing.Size(635, 260);
-			this.SplitFol.SplitterDistance = 201;
+			this.SplitFol.Size = new System.Drawing.Size(1087, 260);
+			this.SplitFol.SplitterDistance = 344;
 			this.SplitFol.TabIndex = 0;
 			this.SplitFol.TabStop = false;
 			this.SplitFol.Text = "SplitContainer1";
@@ -419,7 +438,7 @@
 			this.fols.Name = "fols";
 			this.fols.SelectedImageIndex = 1;
 			this.fols.ShowLines = false;
-			this.fols.Size = new System.Drawing.Size(201, 260);
+			this.fols.Size = new System.Drawing.Size(344, 260);
 			this.fols.TabIndex = 0;
 			// 
 			// FolIcons
@@ -452,8 +471,8 @@
 			// SplitPls.Panel2
 			// 
 			this.SplitPls.Panel2.Controls.Add(this.playlist);
-			this.SplitPls.Size = new System.Drawing.Size(430, 260);
-			this.SplitPls.SplitterDistance = 210;
+			this.SplitPls.Size = new System.Drawing.Size(739, 260);
+			this.SplitPls.SplitterDistance = 360;
 			this.SplitPls.TabIndex = 5;
 			// 
 			// lblMode
@@ -478,7 +497,7 @@
 			this.fils.LargeImageList = this.LargeFileIcons;
 			this.fils.Location = new System.Drawing.Point(2, 27);
 			this.fils.Name = "fils";
-			this.fils.Size = new System.Drawing.Size(206, 231);
+			this.fils.Size = new System.Drawing.Size(356, 231);
 			this.fils.SmallImageList = this.SmallFileIcons;
 			this.fils.TabIndex = 7;
 			this.fils.UseCompatibleStateImageBehavior = false;
@@ -506,7 +525,7 @@
 			this.playlist.LargeImageList = this.LargeFileIcons;
 			this.playlist.Location = new System.Drawing.Point(0, 0);
 			this.playlist.Name = "playlist";
-			this.playlist.Size = new System.Drawing.Size(216, 260);
+			this.playlist.Size = new System.Drawing.Size(375, 260);
 			this.playlist.SmallImageList = this.SmallFileIcons;
 			this.playlist.TabIndex = 4;
 			this.playlist.UseCompatibleStateImageBehavior = false;
@@ -523,7 +542,7 @@
             this.MnuHelp});
 			this.VidMenu.Location = new System.Drawing.Point(0, 0);
 			this.VidMenu.Name = "VidMenu";
-			this.VidMenu.Size = new System.Drawing.Size(635, 24);
+			this.VidMenu.Size = new System.Drawing.Size(1087, 24);
 			this.VidMenu.TabIndex = 0;
 			this.VidMenu.Text = "MenuStrip1";
 			// 
@@ -710,7 +729,7 @@
 			// 
 			this.MediaRestartMnu.Name = "MediaRestartMnu";
 			this.MediaRestartMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-			this.MediaRestartMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaRestartMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaRestartMnu.Text = "Restart &Play";
 			this.MediaRestartMnu.Click += new System.EventHandler(this.MediaRestartMnu_Click);
 			// 
@@ -719,19 +738,19 @@
 			this.MediaStopMnu.CheckOnClick = true;
 			this.MediaStopMnu.Name = "MediaStopMnu";
 			this.MediaStopMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-			this.MediaStopMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaStopMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaStopMnu.Text = "Stop Play";
 			// 
 			// SepMedia1
 			// 
 			this.SepMedia1.Name = "SepMedia1";
-			this.SepMedia1.Size = new System.Drawing.Size(211, 6);
+			this.SepMedia1.Size = new System.Drawing.Size(210, 6);
 			// 
 			// MediaVolumeUpMnu
 			// 
 			this.MediaVolumeUpMnu.Name = "MediaVolumeUpMnu";
 			this.MediaVolumeUpMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Up)));
-			this.MediaVolumeUpMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaVolumeUpMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaVolumeUpMnu.Tag = "1";
 			this.MediaVolumeUpMnu.Text = "Volume &Up";
 			this.MediaVolumeUpMnu.Click += new System.EventHandler(this.MediaVolumeMnu_Click);
@@ -740,7 +759,7 @@
 			// 
 			this.MediaVolumeDownMnu.Name = "MediaVolumeDownMnu";
 			this.MediaVolumeDownMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down)));
-			this.MediaVolumeDownMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaVolumeDownMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaVolumeDownMnu.Tag = "-1";
 			this.MediaVolumeDownMnu.Text = "Volume &Down";
 			this.MediaVolumeDownMnu.Click += new System.EventHandler(this.MediaVolumeMnu_Click);
@@ -749,20 +768,20 @@
 			// 
 			this.MediaVolumeMuteMnu.Name = "MediaVolumeMuteMnu";
 			this.MediaVolumeMuteMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-			this.MediaVolumeMuteMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaVolumeMuteMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaVolumeMuteMnu.Text = "Volume &Mute";
 			this.MediaVolumeMuteMnu.CheckStateChanged += new System.EventHandler(this.MediaVolumeMuteMnu_Click);
 			// 
 			// SepMedia2
 			// 
 			this.SepMedia2.Name = "SepMedia2";
-			this.SepMedia2.Size = new System.Drawing.Size(211, 6);
+			this.SepMedia2.Size = new System.Drawing.Size(210, 6);
 			// 
 			// MediaPanLeftMnu
 			// 
 			this.MediaPanLeftMnu.Name = "MediaPanLeftMnu";
 			this.MediaPanLeftMnu.ShortcutKeyDisplayString = "Alt + Left";
-			this.MediaPanLeftMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaPanLeftMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaPanLeftMnu.Tag = "NB: Shift and Alt will also be handled in the form\'s KeyPreview";
 			this.MediaPanLeftMnu.Text = "Pan Left";
 			this.MediaPanLeftMnu.Click += new System.EventHandler(this.MediaPanMnu_Click);
@@ -771,7 +790,7 @@
 			// 
 			this.MediaPanRightMnu.Name = "MediaPanRightMnu";
 			this.MediaPanRightMnu.ShortcutKeyDisplayString = "Alt + Right";
-			this.MediaPanRightMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaPanRightMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaPanRightMnu.Tag = "NB: Shift and Alt will also be handled in the form\'s KeyPreview";
 			this.MediaPanRightMnu.Text = "Pan Right";
 			this.MediaPanRightMnu.Click += new System.EventHandler(this.MediaPanMnu_Click);
@@ -780,7 +799,7 @@
 			// 
 			this.MediaSearchLyricsMnu.Name = "MediaSearchLyricsMnu";
 			this.MediaSearchLyricsMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-			this.MediaSearchLyricsMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaSearchLyricsMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaSearchLyricsMnu.Text = "Search Lyrics";
 			this.MediaSearchLyricsMnu.Click += new System.EventHandler(this.MediaSearchLyricsMnu_Click);
 			// 
@@ -788,7 +807,7 @@
 			// 
 			this.MediaPlayedHistoryMnu.Name = "MediaPlayedHistoryMnu";
 			this.MediaPlayedHistoryMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-			this.MediaPlayedHistoryMnu.Size = new System.Drawing.Size(214, 22);
+			this.MediaPlayedHistoryMnu.Size = new System.Drawing.Size(213, 22);
 			this.MediaPlayedHistoryMnu.Text = "Played History";
 			this.MediaPlayedHistoryMnu.Click += new System.EventHandler(this.MediaPlayedHistoryMnu_Click);
 			// 
@@ -805,7 +824,7 @@
             this.SepTools1,
             this.ToolsOptionsMnu});
 			this.MnuTools.Name = "MnuTools";
-			this.MnuTools.Size = new System.Drawing.Size(48, 20);
+			this.MnuTools.Size = new System.Drawing.Size(46, 20);
 			this.MnuTools.Text = "&Tools";
 			// 
 			// ToolsReloadMediaLibraryMnu
@@ -848,6 +867,13 @@
 			this.ToolsCheckPlaylistMnu.Size = new System.Drawing.Size(192, 22);
 			this.ToolsCheckPlaylistMnu.Text = "Check Playlist";
 			this.ToolsCheckPlaylistMnu.ToolTipText = "Checks files that exist in the playlist";
+			// 
+			// ToolsDataManagerMnu
+			// 
+			this.ToolsDataManagerMnu.Name = "ToolsDataManagerMnu";
+			this.ToolsDataManagerMnu.Size = new System.Drawing.Size(192, 22);
+			this.ToolsDataManagerMnu.Text = "&Data Manager";
+			this.ToolsDataManagerMnu.Click += new System.EventHandler(this.ToolsDataManagerMnu_Click);
 			// 
 			// SepTools1
 			// 
@@ -1177,22 +1203,15 @@
 			this.PanLyrics.Interval = 50;
 			this.PanLyrics.Tick += new System.EventHandler(this.tmr_Tick);
 			// 
-			// ToolsDataManagerMnu
-			// 
-			this.ToolsDataManagerMnu.Name = "ToolsDataManagerMnu";
-			this.ToolsDataManagerMnu.Size = new System.Drawing.Size(192, 22);
-			this.ToolsDataManagerMnu.Text = "&Data Manager";
-			this.ToolsDataManagerMnu.Click += new System.EventHandler(this.ToolsDataManagerMnu_Click);
-			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(635, 467);
+			this.ClientSize = new System.Drawing.Size(1087, 467);
 			this.Controls.Add(this.ToolStripContainer);
 			this.KeyPreview = true;
 			this.Name = "Main";
-			this.Text = "IViewer 5.5";
+			this.Text = "IViewer 6.0";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
 			this.StatusBar.ResumeLayout(false);
 			this.StatusBar.PerformLayout();
@@ -1205,10 +1224,13 @@
 			this.ToolStripContainer.ResumeLayout(false);
 			this.ToolStripContainer.PerformLayout();
 			this.SplitViewer.Panel1.ResumeLayout(false);
-			this.SplitViewer.Panel1.PerformLayout();
 			this.SplitViewer.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SplitViewer)).EndInit();
 			this.SplitViewer.ResumeLayout(false);
+			this.SplitMeta.Panel1.ResumeLayout(false);
+			this.SplitMeta.Panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.SplitMeta)).EndInit();
+			this.SplitMeta.ResumeLayout(false);
 			this.LyrMenu.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
 			this.SplitFol.Panel1.ResumeLayout(false);
@@ -1341,5 +1363,6 @@
 		private System.Windows.Forms.ToolStripSeparator SepHelp2;
 		private System.Windows.Forms.ToolStripMenuItem ToolsCheckPlaylistMnu;
 		private System.Windows.Forms.ToolStripMenuItem ToolsDataManagerMnu;
+		private System.Windows.Forms.SplitContainer SplitMeta;
 	}
 }

@@ -248,7 +248,7 @@
 			this.ClientSize = new System.Drawing.Size(584, 282);
 			this.Controls.Add(this.tabControls);
 			this.Controls.Add(this.Items);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+			//this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Name = "Lyrics";
 			this.Text = "Lyrics Editor";
 			this.tabLoop.ResumeLayout(false);

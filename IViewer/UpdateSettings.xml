@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <UpdateSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Url>http://ivy.cselian.com/updates/</Url>
+  <Url>http://cselian.com/apps/updates/</Url>
   <ProgramName>IViewer</ProgramName>
   <Support>imran@cselian.com</Support>
   <Frequency>Daily</Frequency>

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("cselian.com")]
 [assembly: AssemblyProduct("Cselian's IViewer")]
-[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2013")]
+[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("5.5.0.506")]
-[assembly: AssemblyFileVersion("5.5.0.506")]
+[assembly: AssemblyVersion("6.0.0.521")]
+[assembly: AssemblyFileVersion("6.0.0.521")]

@@ -418,14 +418,25 @@ namespace Cselian.IViewer.UI
 		{
 			if (LyrEditorMnu.Checked)
 			{
-				if (LyricsUI == null) LyricsUI = new Lyrics();
+				if (LyricsUI == null)
+				{
+					LyricsUI = new Lyrics();
+					SplitMeta.Panel2.Controls.Add(LyricsUI);
+					SplitMeta.Panel2Collapsed = false;
+				}
 				LyricsUI.ShowFor(LyrItem);
 			}
 			else if (LyricsUI != null)
 			{
-				LyricsUI.Close();
-				LyricsUI = null;
+				//LyricsUI.Close();
+				//LyricsUI = null;
+				SplitMeta.Panel2Collapsed = true;
 			}
+		}
+
+		private void lblLyrics_DoubleClick(object sender, EventArgs e)
+		{
+			SplitMeta.Panel2Collapsed = !SplitMeta.Panel2Collapsed;
 		}
 
 		#endregion

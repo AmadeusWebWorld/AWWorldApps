@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Cselian.IViewer.UI
 {
-	public partial class Lyrics : Form
+	public partial class Lyrics : UserControl
 	{
 		private LyricInfo LyrInfo;
 
@@ -29,7 +29,7 @@ namespace Cselian.IViewer.UI
 			LyrInfo = lyr;
 			Items.DataSource = lyr.Lines;
 			Items.DisplayMember = "DisplayText";
-			ShowDialog();
+			ParentForm.Focus();
 		}
 
 		public void ShowItem(LyricInfo.Line item)

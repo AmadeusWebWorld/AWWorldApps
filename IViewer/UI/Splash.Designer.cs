@@ -41,12 +41,12 @@
 			this.lblSite.BackColor = System.Drawing.Color.White;
 			this.lblSite.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
 			this.lblSite.LinkColor = System.Drawing.Color.Teal;
-			this.lblSite.Location = new System.Drawing.Point(133, 247);
+			this.lblSite.Location = new System.Drawing.Point(123, 248);
 			this.lblSite.Name = "lblSite";
-			this.lblSite.Size = new System.Drawing.Size(193, 14);
+			this.lblSite.Size = new System.Drawing.Size(208, 14);
 			this.lblSite.TabIndex = 6;
 			this.lblSite.TabStop = true;
-			this.lblSite.Text = "http://ivy.cselian.com/iviewer";
+			this.lblSite.Text = "http://cselian.com/apps/iviewer";
 			this.lblSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Click);
 			// 
 			// lblMail
@@ -73,7 +73,7 @@
 			this.lblMsg.Name = "lblMsg";
 			this.lblMsg.Size = new System.Drawing.Size(432, 42);
 			this.lblMsg.TabIndex = 5;
-			this.lblMsg.Text = "IViewer is absolutely FREE!\r\n(c) 1999 - {0} - All Rights Reserved.";
+			this.lblMsg.Text = "IViewer is absolutely FREE!\r\n(c) 2000 - {0} - All Rights Reserved.";
 			this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lblVersion
