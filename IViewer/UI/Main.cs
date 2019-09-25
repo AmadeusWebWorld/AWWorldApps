@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.IO;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 
 namespace Cselian.IViewer.UI
 {
@@ -21,8 +21,10 @@ namespace Cselian.IViewer.UI
 			: this(true)
 		{
 			InitializeComponent();
-			Load += new System.EventHandler(Main_Load);
+			Load += new EventHandler(Main_Load);
 			VidEngine.MainInst = this;
+			LyricsUI = MetaLyrics;
+			SplitMeta.Panel2Collapsed = true;
 		}
 
 		private void Main_Load(object sender, System.EventArgs e)
@@ -350,11 +352,8 @@ namespace Cselian.IViewer.UI
 		private void LoadLyrics(string media)
 		{
 			LyrItem = LyricInfo.Load(media);
-			if (!LyrItem.HasTimeMarkers)
-			{
-				LyrEditorMnu.Checked = true;
-				LyrEditorMnu_CheckedChanged(null, null);
-			}
+			//if (!LyrItem.HasTimeMarkers)
+			
 			PanLyrics.Enabled = true;
 			lblLyrics.Visible = true;
 			ToolsLyricsDisplayMnu.Visible = true;
@@ -412,31 +411,6 @@ namespace Cselian.IViewer.UI
 			if (cp.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
 				return;
 			lblLyrics.ForeColor = cp.Color;
-		}
-
-		private void LyrEditorMnu_CheckedChanged(object sender, EventArgs e)
-		{
-			if (LyrEditorMnu.Checked)
-			{
-				if (LyricsUI == null)
-				{
-					LyricsUI = new Lyrics();
-					SplitMeta.Panel2.Controls.Add(LyricsUI);
-					SplitMeta.Panel2Collapsed = false;
-				}
-				LyricsUI.ShowFor(LyrItem);
-			}
-			else if (LyricsUI != null)
-			{
-				//LyricsUI.Close();
-				//LyricsUI = null;
-				SplitMeta.Panel2Collapsed = true;
-			}
-		}
-
-		private void lblLyrics_DoubleClick(object sender, EventArgs e)
-		{
-			SplitMeta.Panel2Collapsed = !SplitMeta.Panel2Collapsed;
 		}
 
 		#endregion
@@ -540,5 +514,10 @@ namespace Cselian.IViewer.UI
 		}
 
 		#endregion
+
+		private void MetaFullscreen_CheckedChanged(object sender, EventArgs e)
+		{
+			SplitMeta.Panel1Collapsed = SplitViewer.Panel2Collapsed = MetaFullscreen.Checked;
+		}
 	}
 }

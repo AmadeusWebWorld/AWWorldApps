@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace Cselian.IViewer
 {
 	public class ExtensionFilter
 	{
+		public const string MetaNone = "";
+
+		public static readonly string[] TextExtensions = new string[] { "srt", "lrc", "txt" };
+
+		public static bool IsText(string e)
+		{
+			return TextExtensions.Contains(e);
+		}
+
 		public string Text { get; private set; }
 
 		private readonly bool _exclusive;
@@ -23,6 +31,11 @@ namespace Cselian.IViewer
 				extensions = extensions.Split('|')[0];
 			}
 
+			if (extensions.Length == 0)
+			{
+				_extensions = null;
+			}
+
 			if (extensions.StartsWith("^"))
 			{
 				_exclusive = true;
@@ -35,6 +48,7 @@ namespace Cselian.IViewer
 
 		public bool Include(FileInfo fi)
 		{
+			if (_extensions == null) return true;
 			var found = _extensions.Contains(fi.Extension.Replace(".", string.Empty).ToLower());
 			return found != _exclusive;
 		}

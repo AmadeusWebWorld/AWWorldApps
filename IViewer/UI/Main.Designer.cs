@@ -41,6 +41,8 @@
 			this.HistoryItemClear = new System.Windows.Forms.ToolStripMenuItem();
 			this.HistoryItemManage = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+			this.ExtensionsFilter = new System.Windows.Forms.ComboBox();
+			this.MetaFullscreen = new System.Windows.Forms.CheckBox();
 			this.ToolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.SplitViewer = new System.Windows.Forms.SplitContainer();
 			this.SplitMeta = new System.Windows.Forms.SplitContainer();
@@ -50,8 +52,9 @@
 			this.LyrIncreaseSizeMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.LyrDecreaseSizeMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.LyrColorMnu = new System.Windows.Forms.ToolStripMenuItem();
-			this.LyrEditorMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.Player = new AxWMPLib.AxWindowsMediaPlayer();
+			this.MetaText = new System.Windows.Forms.TextBox();
+			this.MetaLyrics = new Cselian.IViewer.UI.Lyrics();
 			this.SplitFol = new System.Windows.Forms.SplitContainer();
 			this.fols = new System.Windows.Forms.TreeView();
 			this.FolIcons = new System.Windows.Forms.ImageList(this.components);
@@ -140,7 +143,6 @@
 			this.TreeItemFlatten = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayNext = new System.Windows.Forms.Timer(this.components);
 			this.PanLyrics = new System.Windows.Forms.Timer(this.components);
-			this.ExtensionsFilter = new System.Windows.Forms.ComboBox();
 			this.StatusBar.SuspendLayout();
 			this.HistoryMenu.SuspendLayout();
 			this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -153,6 +155,7 @@
 			this.SplitViewer.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SplitMeta)).BeginInit();
 			this.SplitMeta.Panel1.SuspendLayout();
+			this.SplitMeta.Panel2.SuspendLayout();
 			this.SplitMeta.SuspendLayout();
 			this.LyrMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
@@ -230,7 +233,7 @@
 			this.SearchFilter.Location = new System.Drawing.Point(40, 4);
 			this.SearchFilter.Multiline = true;
 			this.SearchFilter.Name = "SearchFilter";
-			this.SearchFilter.Size = new System.Drawing.Size(232, 19);
+			this.SearchFilter.Size = new System.Drawing.Size(174, 19);
 			this.SearchFilter.TabIndex = 5;
 			this.ToolTip.SetToolTip(this.SearchFilter, "Search Library");
 			// 
@@ -260,6 +263,33 @@
 			// 
 			this.toolStripSeparator7.Name = "toolStripSeparator7";
 			this.toolStripSeparator7.Size = new System.Drawing.Size(164, 6);
+			// 
+			// ExtensionsFilter
+			// 
+			this.ExtensionsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ExtensionsFilter.DropDownWidth = 100;
+			this.ExtensionsFilter.Items.AddRange(new object[] {
+            "|All",
+            "^txt,src|Media"});
+			this.ExtensionsFilter.Location = new System.Drawing.Point(220, 3);
+			this.ExtensionsFilter.MaxDropDownItems = 4;
+			this.ExtensionsFilter.Name = "ExtensionsFilter";
+			this.ExtensionsFilter.Size = new System.Drawing.Size(78, 21);
+			this.ExtensionsFilter.TabIndex = 10;
+			this.ToolTip.SetToolTip(this.ExtensionsFilter, "Search In");
+			// 
+			// MetaFullscreen
+			// 
+			this.MetaFullscreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.MetaFullscreen.AutoSize = true;
+			this.MetaFullscreen.Location = new System.Drawing.Point(367, 3);
+			this.MetaFullscreen.Name = "MetaFullscreen";
+			this.MetaFullscreen.Size = new System.Drawing.Size(39, 17);
+			this.MetaFullscreen.TabIndex = 10;
+			this.MetaFullscreen.Text = "FS";
+			this.ToolTip.SetToolTip(this.MetaFullscreen, "Fullscreen");
+			this.MetaFullscreen.UseVisualStyleBackColor = true;
+			this.MetaFullscreen.CheckedChanged += new System.EventHandler(this.MetaFullscreen_CheckedChanged);
 			// 
 			// ToolStripContainer
 			// 
@@ -316,7 +346,12 @@
 			this.SplitMeta.Panel1.Controls.Add(this.lblDuration);
 			this.SplitMeta.Panel1.Controls.Add(this.lblLyrics);
 			this.SplitMeta.Panel1.Controls.Add(this.Player);
-			this.SplitMeta.Panel2Collapsed = true;
+			// 
+			// SplitMeta.Panel2
+			// 
+			this.SplitMeta.Panel2.Controls.Add(this.MetaFullscreen);
+			this.SplitMeta.Panel2.Controls.Add(this.MetaText);
+			this.SplitMeta.Panel2.Controls.Add(this.MetaLyrics);
 			this.SplitMeta.Size = new System.Drawing.Size(1083, 120);
 			this.SplitMeta.SplitterDistance = 648;
 			this.SplitMeta.TabIndex = 6;
@@ -327,7 +362,7 @@
 			this.lblDuration.AutoSize = true;
 			this.lblDuration.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.lblDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.lblDuration.Location = new System.Drawing.Point(1046, 93);
+			this.lblDuration.Location = new System.Drawing.Point(611, 93);
 			this.lblDuration.Name = "lblDuration";
 			this.lblDuration.Size = new System.Drawing.Size(24, 15);
 			this.lblDuration.TabIndex = 5;
@@ -342,23 +377,21 @@
 			this.lblLyrics.ContextMenuStrip = this.LyrMenu;
 			this.lblLyrics.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblLyrics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.lblLyrics.Location = new System.Drawing.Point(1056, 9);
+			this.lblLyrics.Location = new System.Drawing.Point(621, 9);
 			this.lblLyrics.Name = "lblLyrics";
 			this.lblLyrics.Size = new System.Drawing.Size(23, 18);
 			this.lblLyrics.TabIndex = 5;
 			this.lblLyrics.Text = "...";
 			this.lblLyrics.Visible = false;
-			this.lblLyrics.DoubleClick += new System.EventHandler(this.lblLyrics_DoubleClick);
 			// 
 			// LyrMenu
 			// 
 			this.LyrMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LyrIncreaseSizeMnu,
             this.LyrDecreaseSizeMnu,
-            this.LyrColorMnu,
-            this.LyrEditorMnu});
+            this.LyrColorMnu});
 			this.LyrMenu.Name = "LyrMenu";
-			this.LyrMenu.Size = new System.Drawing.Size(183, 92);
+			this.LyrMenu.Size = new System.Drawing.Size(183, 70);
 			// 
 			// LyrIncreaseSizeMnu
 			// 
@@ -388,16 +421,6 @@
 			this.LyrColorMnu.ToolTipText = "Set the color of the Lyrics Display";
 			this.LyrColorMnu.Click += new System.EventHandler(this.LyrColorMnu_Click);
 			// 
-			// LyrEditorMnu
-			// 
-			this.LyrEditorMnu.CheckOnClick = true;
-			this.LyrEditorMnu.Name = "LyrEditorMnu";
-			this.LyrEditorMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-			this.LyrEditorMnu.Size = new System.Drawing.Size(182, 22);
-			this.LyrEditorMnu.Text = "Editor";
-			this.LyrEditorMnu.ToolTipText = "Brings up the Lyrics Editor dialog";
-			this.LyrEditorMnu.Click += new System.EventHandler(this.LyrEditorMnu_CheckedChanged);
-			// 
 			// Player
 			// 
 			this.Player.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -405,9 +428,32 @@
 			this.Player.Location = new System.Drawing.Point(0, 0);
 			this.Player.Name = "Player";
 			this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
-			this.Player.Size = new System.Drawing.Size(1083, 120);
+			this.Player.Size = new System.Drawing.Size(648, 120);
 			this.Player.TabIndex = 4;
 			this.Player.TabStop = false;
+			// 
+			// MetaText
+			// 
+			this.MetaText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.MetaText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.MetaText.Location = new System.Drawing.Point(0, 0);
+			this.MetaText.Multiline = true;
+			this.MetaText.Name = "MetaText";
+			this.MetaText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.MetaText.Size = new System.Drawing.Size(428, 117);
+			this.MetaText.TabIndex = 0;
+			// 
+			// MetaLyrics
+			// 
+			this.MetaLyrics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.MetaLyrics.Location = new System.Drawing.Point(2, 0);
+			this.MetaLyrics.Name = "MetaLyrics";
+			this.MetaLyrics.Size = new System.Drawing.Size(428, 120);
+			this.MetaLyrics.TabIndex = 9;
 			// 
 			// SplitFol
 			// 
@@ -1205,21 +1251,6 @@
 			this.PanLyrics.Interval = 50;
 			this.PanLyrics.Tick += new System.EventHandler(this.tmr_Tick);
 			// 
-			// ExtensionsFilter
-			// 
-			this.ExtensionsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.ExtensionsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.ExtensionsFilter.DropDownWidth = 100;
-			this.ExtensionsFilter.Items.AddRange(new object[] {
-            "|All",
-            "^txt,src|Media"});
-			this.ExtensionsFilter.Location = new System.Drawing.Point(278, 3);
-			this.ExtensionsFilter.MaxDropDownItems = 4;
-			this.ExtensionsFilter.Name = "ExtensionsFilter";
-			this.ExtensionsFilter.Size = new System.Drawing.Size(20, 21);
-			this.ExtensionsFilter.TabIndex = 10;
-			this.ToolTip.SetToolTip(this.ExtensionsFilter, "Search In");
-			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1246,6 +1277,8 @@
 			this.SplitViewer.ResumeLayout(false);
 			this.SplitMeta.Panel1.ResumeLayout(false);
 			this.SplitMeta.Panel1.PerformLayout();
+			this.SplitMeta.Panel2.ResumeLayout(false);
+			this.SplitMeta.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SplitMeta)).EndInit();
 			this.SplitMeta.ResumeLayout(false);
 			this.LyrMenu.ResumeLayout(false);
@@ -1286,7 +1319,6 @@
 		private System.Windows.Forms.ToolStripMenuItem LyrIncreaseSizeMnu;
 		private System.Windows.Forms.ToolStripMenuItem LyrDecreaseSizeMnu;
 		private System.Windows.Forms.ToolStripMenuItem LyrColorMnu;
-		private System.Windows.Forms.ToolStripMenuItem LyrEditorMnu;
 		private AxWMPLib.AxWindowsMediaPlayer Player;
 		private System.Windows.Forms.SplitContainer SplitFol;
 		private System.Windows.Forms.TreeView fols;
@@ -1382,5 +1414,8 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolsDataManagerMnu;
 		private System.Windows.Forms.SplitContainer SplitMeta;
 		private System.Windows.Forms.ComboBox ExtensionsFilter;
+		private System.Windows.Forms.TextBox MetaText;
+		private Lyrics MetaLyrics;
+		private System.Windows.Forms.CheckBox MetaFullscreen;
 	}
 }

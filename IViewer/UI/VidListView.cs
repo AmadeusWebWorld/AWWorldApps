@@ -130,6 +130,9 @@ namespace Cselian.IViewer.UI
 			item.ImageKey = li.Info.Extension;
 		}
 
+		public const int MetaIndex = 3;
+		public const int PlayedIndex = 5;
+
 		public static void InitLvw(ListView lvw, bool playlist)
 		{
 			lvw.Columns.Clear();
@@ -145,13 +148,13 @@ namespace Cselian.IViewer.UI
 			lvw.Columns[2].Width = VidEngine.Settings.FilColWidthExt;
 
 			lvw.Columns.Add("Meta");
-			lvw.Columns[3].Width = 60;
+			lvw.Columns[MetaIndex].Width = 60;
 
 			lvw.Columns.Add("Modified");
 			lvw.Columns[4].Width = VidEngine.Settings.FilColWidthModified;
 
 			lvw.Columns.Add("Played");
-			lvw.Columns[5].Width = 60;
+			lvw.Columns[PlayedIndex].Width = 60;
 
 			if (playlist)
 			{

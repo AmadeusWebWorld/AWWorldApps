@@ -13,6 +13,7 @@ namespace Cselian.IViewer
 			FullPath = path;
 			Name = Path.GetFileName(path);
 			Folder = Path.GetDirectoryName(path);
+			Extension = Path.GetExtension(Name).Replace(".", string.Empty);
 		}
 
 		public LibItem(FileInfo fi)
@@ -21,6 +22,7 @@ namespace Cselian.IViewer
 			FullPath = fi.FullName;
 			Folder = fi.DirectoryName;
 			Name = fi.Name;
+			Extension = fi.Extension.Replace(".", string.Empty);
 		}
 
 		#region Properties
@@ -35,6 +37,8 @@ namespace Cselian.IViewer
 		public string Folder { get; private set; }
 
 		public FileInfo Info { get; private set; }
+
+		public string Extension { get; private set; }
 
 		public string Meta { get; private set; }
 
@@ -62,21 +66,35 @@ namespace Cselian.IViewer
 			}
 		}
 
-		public const string MetaNone = "[none]";
+		private List<string> metas = new List<string>();
 
 		public void CheckMeta()
 		{
-			var list = new List<string>();
+			metas.Clear();
 			var exts = new string[] { "srt", "lrc", "txt", "pdf", "img" };
 			foreach (var ext in exts)
 			{
 				var fil = Path.ChangeExtension(FullPath, ext);
 				if (File.Exists(fil))
 				{
-					list.Add(ext);
+					metas.Add(ext);
 				}
 			}
-			Meta = list.Count == 0 ? MetaNone : string.Join(", ", list);
+			Meta = metas.Count == 0 ? ExtensionFilter.MetaNone : string.Join(", ", metas);
+		}
+
+		public void SetTxt(System.Windows.Forms.TextBox txt)
+		{
+			txt.Visible = false;
+			foreach (var ext in ExtensionFilter.TextExtensions)
+			{
+				var fil = Path.ChangeExtension(FullPath, "." + ext);
+				if (File.Exists(fil))
+				{
+					txt.Visible = true;
+					txt.Text = File.ReadAllText(fil);
+				}
+			}
 		}
 
 		private void SetFI(FileInfo fi)

@@ -226,7 +226,7 @@ namespace Cselian.IViewer.UI
 		// LoadFolder into filelist
 		private void fols_AfterSelect(object sender, TreeViewEventArgs f)
 		{
-			if (fols.SelectedNode.Equals(PlsEngine.PlsNode) | (fols.SelectedNode.Parent != null && fols.SelectedNode.Parent.Equals(PlsEngine.PlsNode)))
+			if (fols.SelectedNode == null || fols.SelectedNode.Equals(PlsEngine.PlsNode) || (fols.SelectedNode.Parent != null && fols.SelectedNode.Parent.Equals(PlsEngine.PlsNode)))
 				return;
 
 			if (rightclickingOnFol || navigatingToFol || fols.SelectedNode == null)
@@ -490,19 +490,31 @@ namespace Cselian.IViewer.UI
 				return;
 			}
 
-			if (ctl == playlist) SelectedFile.SubItems[5].Text = "yes";
+			SelectedFile.SubItems[VidListView.PlayedIndex - 1].Text = "yes";
 
-			SplitMeta.Panel2Collapsed = SelectedFile.LibItem().Meta == LibItem.MetaNone;
-			if (LyricInfo.Exists(SelectedFile.LibItem().FullPath))
+			var itm = SelectedFile.LibItem();
+			itm.CheckMeta();
+			SelectedFile.SubItems[VidListView.MetaIndex - 1].Text = itm.Meta;
+
+			SplitMeta.Panel2Collapsed = itm.Meta == ExtensionFilter.MetaNone;
+
+			if (LyricInfo.Exists(itm.FullPath))
 			{
-				LoadLyrics(SelectedFile.LibItem().FullPath);
+				LoadLyrics(itm.FullPath);
+				MetaText.Visible = false;
+				MetaLyrics.Visible = true;
 			}
 			else
 			{
+				itm.SetTxt(MetaText);
+
 				DontLyrics();
+				MetaLyrics.Visible = false;
 			}
 
-			Player.URL = SelectedFile.LibItem().FullPath;
+			if (!ExtensionFilter.IsText(itm.Extension))
+				Player.URL = SelectedFile.LibItem().FullPath;
+
 			StatusFile.Text = SelectedFile.Text;
 			StatusFile.ToolTipText = SelectedFile.LibItem().FullPath;
 			this.Text = SelectedFile.Text;
@@ -537,14 +549,14 @@ namespace Cselian.IViewer.UI
 				{
 					lvw.SelectedItems.Clear();
 					lvw.Items[0].Selected = true;
-					if (lvw == playlist) lvw.Items[0].SubItems[5].Text = "yes";
+					lvw.Items[0].SubItems[VidListView.PlayedIndex - 1].Text = "yes";
 				}
 				else
 				{
 					var ix = lvw.SelectedIndices[0] + 1;
 					lvw.SelectedItems.Clear();
 					lvw.Items[ix].Selected = true;
-					if (lvw == playlist) lvw.Items[ix].SubItems[5].Text = "yes";
+					lvw.Items[ix].SubItems[VidListView.PlayedIndex - 1].Text = "yes";
 				}
 
 				TryPlayFile();
