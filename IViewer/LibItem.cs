@@ -36,6 +36,8 @@ namespace Cselian.IViewer
 
 		public FileInfo Info { get; private set; }
 
+		public string Meta { get; private set; }
+
 		public long FileSize { get; private set; }
 
 		public DateTime FileDate { get; private set; }
@@ -58,6 +60,23 @@ namespace Cselian.IViewer
 			{
 				Info = new FileInfo(FullPath);
 			}
+		}
+
+		public const string MetaNone = "[none]";
+
+		public void CheckMeta()
+		{
+			var list = new List<string>();
+			var exts = new string[] { "srt", "lrc", "txt", "pdf", "img" };
+			foreach (var ext in exts)
+			{
+				var fil = Path.ChangeExtension(FullPath, ext);
+				if (File.Exists(fil))
+				{
+					list.Add(ext);
+				}
+			}
+			Meta = list.Count == 0 ? MetaNone : string.Join(", ", list);
 		}
 
 		private void SetFI(FileInfo fi)

@@ -140,6 +140,7 @@
 			this.TreeItemFlatten = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayNext = new System.Windows.Forms.Timer(this.components);
 			this.PanLyrics = new System.Windows.Forms.Timer(this.components);
+			this.ExtensionsFilter = new System.Windows.Forms.ComboBox();
 			this.StatusBar.SuspendLayout();
 			this.HistoryMenu.SuspendLayout();
 			this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -229,7 +230,7 @@
 			this.SearchFilter.Location = new System.Drawing.Point(40, 4);
 			this.SearchFilter.Multiline = true;
 			this.SearchFilter.Name = "SearchFilter";
-			this.SearchFilter.Size = new System.Drawing.Size(258, 19);
+			this.SearchFilter.Size = new System.Drawing.Size(232, 19);
 			this.SearchFilter.TabIndex = 5;
 			this.ToolTip.SetToolTip(this.SearchFilter, "Search Library");
 			// 
@@ -465,6 +466,7 @@
 			this.SplitPls.Panel1.Controls.Add(this.lblMode);
 			this.SplitPls.Panel1.Controls.Add(this.SearchModes);
 			this.SplitPls.Panel1.Controls.Add(this.FolderFilter);
+			this.SplitPls.Panel1.Controls.Add(this.ExtensionsFilter);
 			this.SplitPls.Panel1.Controls.Add(this.SearchFilter);
 			this.SplitPls.Panel1.Controls.Add(this.fils);
 			// 
@@ -1203,6 +1205,21 @@
 			this.PanLyrics.Interval = 50;
 			this.PanLyrics.Tick += new System.EventHandler(this.tmr_Tick);
 			// 
+			// ExtensionsFilter
+			// 
+			this.ExtensionsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ExtensionsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ExtensionsFilter.DropDownWidth = 100;
+			this.ExtensionsFilter.Items.AddRange(new object[] {
+            "|All",
+            "^txt,src|Media"});
+			this.ExtensionsFilter.Location = new System.Drawing.Point(278, 3);
+			this.ExtensionsFilter.MaxDropDownItems = 4;
+			this.ExtensionsFilter.Name = "ExtensionsFilter";
+			this.ExtensionsFilter.Size = new System.Drawing.Size(20, 21);
+			this.ExtensionsFilter.TabIndex = 10;
+			this.ToolTip.SetToolTip(this.ExtensionsFilter, "Search In");
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1364,5 +1381,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolsCheckPlaylistMnu;
 		private System.Windows.Forms.ToolStripMenuItem ToolsDataManagerMnu;
 		private System.Windows.Forms.SplitContainer SplitMeta;
+		private System.Windows.Forms.ComboBox ExtensionsFilter;
 	}
 }

@@ -56,6 +56,8 @@ namespace Cselian.IViewer
 		[XmlAttribute]
 		public SearchMode SearchMode { get; set; }
 
+		public ExtensionFilter Filter { get; set; }
+
 		#endregion
 
 		#region Methods

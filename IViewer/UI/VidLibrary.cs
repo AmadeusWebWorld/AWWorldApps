@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -85,7 +86,11 @@ namespace Cselian.IViewer.UI
 						if (!fol.Exists) return new LibItem[] { };
 
 						var filter = string.IsNullOrEmpty(ctx.SubFilter) ? "*" : "*" + ctx.SubFilter + "*";
-						return LibItem.FromList(fol.GetFiles(filter, SearchOption.TopDirectoryOnly));
+						var files = fol.GetFiles(filter, SearchOption.TopDirectoryOnly);
+
+						if (ctx.Filter != null) files = files.Where(x => ctx.Filter.Include(x)).ToArray();
+
+						return LibItem.FromList(files);
 					}
 				case ListContext.Types.Flat:
 					return Flatten(ctx.Folder);

@@ -93,6 +93,7 @@ namespace Cselian.IViewer.UI
 			};
 
 			li.CheckInfo();
+			li.CheckMeta();
 
 			if (!li.Info.Exists)
 			{
@@ -111,7 +112,7 @@ namespace Cselian.IViewer.UI
 			{
 				li.Info.GetFileSize(),
 				li.Info.Extension,
-				"txt",
+				li.Meta,
 				li.Info.LastWriteTime.ToString(UI.VidEngine.Settings.LVWDateTimeFormat)
 			});
 

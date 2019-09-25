@@ -55,6 +55,8 @@ namespace Cselian.IViewer.UI
 			SplitViewer.PreviewKeyDown += Splitter_PreviewKeyDown;
 			SplitPls.PreviewKeyDown += Splitter_PreviewKeyDown;
 
+			ExtensionsFilter.SelectedIndexChanged += ExtensionsFilter_SelectedIndexChanged;
+			ExtensionsFilter.KeyDown += ExtensionsFilter_KeyDown;
 			SearchFilter.TextChanged += SearchFilter_TextChanged;
 			SearchModes.SelectedIndexChanged += SearchFilter_TextChanged;
 
@@ -267,7 +269,9 @@ namespace Cselian.IViewer.UI
 				var folName = (string)fols.SelectedNode.Tag;
 				if (!Directory.Exists(folName)) return;
 
-				var ctx = new ListContext(ListContext.Types.Folder) { Folder = folName, SubFilter = FolderFilter.Text };
+				var ctx = new ListContext(ListContext.Types.Folder) { Folder = folName, SubFilter = FolderFilter.Text,
+					Filter = !string.IsNullOrEmpty(ExtensionsFilter.Text) ? new ExtensionFilter(ExtensionsFilter.Text) : null };
+
 				SetFileList(ctx);
 			}
 		}
@@ -350,6 +354,17 @@ namespace Cselian.IViewer.UI
 			if (SettingContext || fols.SelectedNode == null || fols.SelectedNode.Tag == null)
 				return;
 
+			fols_AfterSelect(sender, null);
+		}
+
+		private void ExtensionsFilter_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Return)
+				ExtensionsFilter_SelectedIndexChanged(sender, EventArgs.Empty);
+		}
+
+		private void ExtensionsFilter_SelectedIndexChanged(object sender, EventArgs e)
+		{
 			fols_AfterSelect(sender, null);
 		}
 
@@ -477,6 +492,7 @@ namespace Cselian.IViewer.UI
 
 			if (ctl == playlist) SelectedFile.SubItems[5].Text = "yes";
 
+			SplitMeta.Panel2Collapsed = SelectedFile.LibItem().Meta == LibItem.MetaNone;
 			if (LyricInfo.Exists(SelectedFile.LibItem().FullPath))
 			{
 				LoadLyrics(SelectedFile.LibItem().FullPath);

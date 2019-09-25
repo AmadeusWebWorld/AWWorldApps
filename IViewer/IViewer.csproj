@@ -94,6 +94,7 @@
       <DependentUpon>UserInput.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\VidEngine.cs" />
+    <Compile Include="ExtensionFilter.cs" />
     <Compile Include="UI\VidListView.cs" />
     <Compile Include="UI\Lyrics.cs">
       <SubType>Form</SubType>
