@@ -83,6 +83,20 @@ namespace Cselian.IViewer
 			Meta = metas.Count == 0 ? ExtensionFilter.MetaNone : string.Join(", ", metas);
 		}
 
+		public void CreateTxtMeta()
+		{
+			var fil = Path.ChangeExtension(FullPath, "txt");
+			File.WriteAllText(fil, string.Empty);
+			CheckMeta();
+		}
+
+		public void SaveTxtMeta(System.Windows.Forms.TextBox txt)
+		{
+			var fil = Path.ChangeExtension(FullPath, "txt");
+			File.WriteAllText(fil, txt.Text);
+			txt.BackColor = System.Drawing.SystemColors.Window;
+		}
+
 		public void SetTxt(System.Windows.Forms.TextBox txt)
 		{
 			txt.Visible = false;
@@ -93,6 +107,7 @@ namespace Cselian.IViewer
 				{
 					txt.Visible = true;
 					txt.Text = File.ReadAllText(fil);
+					txt.BackColor = System.Drawing.SystemColors.Window;
 				}
 			}
 		}

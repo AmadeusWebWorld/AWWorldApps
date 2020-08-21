@@ -33,7 +33,7 @@ namespace Cselian.IViewer
 
 			if (extensions.Length == 0)
 			{
-				_extensions = null;
+				return;
 			}
 
 			if (extensions.StartsWith("^"))

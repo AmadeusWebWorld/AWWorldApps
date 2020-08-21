@@ -94,8 +94,11 @@
 			this.SepMedia2 = new System.Windows.Forms.ToolStripSeparator();
 			this.MediaPanLeftMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.MediaPanRightMnu = new System.Windows.Forms.ToolStripMenuItem();
-			this.MediaSearchLyricsMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.MediaPlayedHistoryMnu = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.MediaSearchLyricsMnu = new System.Windows.Forms.ToolStripMenuItem();
+			this.MediaOpenMetaMnu = new System.Windows.Forms.ToolStripMenuItem();
+			this.MediaSaveMetaMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.MnuTools = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsReloadMediaLibraryMnu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsSaveMediaLibraryMnu = new System.Windows.Forms.ToolStripMenuItem();
@@ -444,6 +447,7 @@
 			this.MetaText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.MetaText.Size = new System.Drawing.Size(428, 117);
 			this.MetaText.TabIndex = 0;
+			this.MetaText.TextChanged += new System.EventHandler(this.MetaText_TextChanged);
 			// 
 			// MetaLyrics
 			// 
@@ -616,7 +620,7 @@
 			this.PlsNewMnu.ImageTransparentColor = System.Drawing.Color.Black;
 			this.PlsNewMnu.Name = "PlsNewMnu";
 			this.PlsNewMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.PlsNewMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsNewMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsNewMnu.Text = "&New";
 			// 
 			// PlsOpenMnu
@@ -624,56 +628,57 @@
 			this.PlsOpenMnu.ImageTransparentColor = System.Drawing.Color.Black;
 			this.PlsOpenMnu.Name = "PlsOpenMnu";
 			this.PlsOpenMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-			this.PlsOpenMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsOpenMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsOpenMnu.Text = "&Open";
 			// 
 			// SepFile1
 			// 
 			this.SepFile1.Name = "SepFile1";
-			this.SepFile1.Size = new System.Drawing.Size(143, 6);
+			this.SepFile1.Size = new System.Drawing.Size(167, 6);
 			// 
 			// PlsSaveMnu
 			// 
 			this.PlsSaveMnu.ImageTransparentColor = System.Drawing.Color.Black;
 			this.PlsSaveMnu.Name = "PlsSaveMnu";
-			this.PlsSaveMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.PlsSaveMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsSaveMnu.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+			this.PlsSaveMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsSaveMnu.Text = "&Save";
 			// 
 			// PlsSaveAsMnu
 			// 
 			this.PlsSaveAsMnu.Name = "PlsSaveAsMnu";
-			this.PlsSaveAsMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsSaveAsMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsSaveAsMnu.Text = "Save &As";
 			// 
 			// PlsOpenFolderMnu
 			// 
 			this.PlsOpenFolderMnu.Name = "PlsOpenFolderMnu";
-			this.PlsOpenFolderMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsOpenFolderMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsOpenFolderMnu.Text = "Open Folder";
 			// 
 			// PlsRefreshMnu
 			// 
 			this.PlsRefreshMnu.Name = "PlsRefreshMnu";
-			this.PlsRefreshMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsRefreshMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsRefreshMnu.Text = "Refresh List";
 			// 
 			// PlsFixMnu
 			// 
 			this.PlsFixMnu.Name = "PlsFixMnu";
-			this.PlsFixMnu.Size = new System.Drawing.Size(146, 22);
+			this.PlsFixMnu.Size = new System.Drawing.Size(170, 22);
 			this.PlsFixMnu.Text = "Fix Broken";
 			this.PlsFixMnu.Visible = false;
 			// 
 			// SepFile2
 			// 
 			this.SepFile2.Name = "SepFile2";
-			this.SepFile2.Size = new System.Drawing.Size(143, 6);
+			this.SepFile2.Size = new System.Drawing.Size(167, 6);
 			// 
 			// FileExitMnu
 			// 
 			this.FileExitMnu.Name = "FileExitMnu";
-			this.FileExitMnu.Size = new System.Drawing.Size(146, 22);
+			this.FileExitMnu.Size = new System.Drawing.Size(170, 22);
 			this.FileExitMnu.Text = "E&xit";
 			this.FileExitMnu.Click += new System.EventHandler(this.FileExitMnu_Click);
 			// 
@@ -696,7 +701,8 @@
 			this.ViewToolBarMnu.Checked = true;
 			this.ViewToolBarMnu.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.ViewToolBarMnu.Name = "ViewToolBarMnu";
-			this.ViewToolBarMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+			this.ViewToolBarMnu.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
 			this.ViewToolBarMnu.Size = new System.Drawing.Size(233, 22);
 			this.ViewToolBarMnu.Text = "&Toolbar";
 			this.ViewToolBarMnu.Click += new System.EventHandler(this.ViewToolBarMnu_Click);
@@ -767,8 +773,11 @@
             this.SepMedia2,
             this.MediaPanLeftMnu,
             this.MediaPanRightMnu,
+            this.MediaPlayedHistoryMnu,
+            this.toolStripSeparator1,
             this.MediaSearchLyricsMnu,
-            this.MediaPlayedHistoryMnu});
+            this.MediaOpenMetaMnu,
+            this.MediaSaveMetaMnu});
 			this.MnuMedia.Name = "MnuMedia";
 			this.MnuMedia.Size = new System.Drawing.Size(52, 20);
 			this.MnuMedia.Text = "&Media";
@@ -843,6 +852,19 @@
 			this.MediaPanRightMnu.Text = "Pan Right";
 			this.MediaPanRightMnu.Click += new System.EventHandler(this.MediaPanMnu_Click);
 			// 
+			// MediaPlayedHistoryMnu
+			// 
+			this.MediaPlayedHistoryMnu.Name = "MediaPlayedHistoryMnu";
+			this.MediaPlayedHistoryMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+			this.MediaPlayedHistoryMnu.Size = new System.Drawing.Size(213, 22);
+			this.MediaPlayedHistoryMnu.Text = "Played History";
+			this.MediaPlayedHistoryMnu.Click += new System.EventHandler(this.MediaPlayedHistoryMnu_Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(210, 6);
+			// 
 			// MediaSearchLyricsMnu
 			// 
 			this.MediaSearchLyricsMnu.Name = "MediaSearchLyricsMnu";
@@ -851,13 +873,21 @@
 			this.MediaSearchLyricsMnu.Text = "Search Lyrics";
 			this.MediaSearchLyricsMnu.Click += new System.EventHandler(this.MediaSearchLyricsMnu_Click);
 			// 
-			// MediaPlayedHistoryMnu
+			// MediaOpenMetaMnu
 			// 
-			this.MediaPlayedHistoryMnu.Name = "MediaPlayedHistoryMnu";
-			this.MediaPlayedHistoryMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-			this.MediaPlayedHistoryMnu.Size = new System.Drawing.Size(213, 22);
-			this.MediaPlayedHistoryMnu.Text = "Played History";
-			this.MediaPlayedHistoryMnu.Click += new System.EventHandler(this.MediaPlayedHistoryMnu_Click);
+			this.MediaOpenMetaMnu.Name = "MediaOpenMetaMnu";
+			this.MediaOpenMetaMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+			this.MediaOpenMetaMnu.Size = new System.Drawing.Size(213, 22);
+			this.MediaOpenMetaMnu.Text = "Open Meta (.txt)";
+			this.MediaOpenMetaMnu.Click += new System.EventHandler(this.MediaOpenMetaMnu_Click);
+			// 
+			// MediaSaveMetaMnu
+			// 
+			this.MediaSaveMetaMnu.Name = "MediaSaveMetaMnu";
+			this.MediaSaveMetaMnu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+			this.MediaSaveMetaMnu.Size = new System.Drawing.Size(213, 22);
+			this.MediaSaveMetaMnu.Text = "Save Meta";
+			this.MediaSaveMetaMnu.Click += new System.EventHandler(this.MediaSaveMetaMnu_Click);
 			// 
 			// MnuTools
 			// 
@@ -1417,5 +1447,8 @@
 		private System.Windows.Forms.TextBox MetaText;
 		private Lyrics MetaLyrics;
 		private System.Windows.Forms.CheckBox MetaFullscreen;
+		private System.Windows.Forms.ToolStripMenuItem MediaOpenMetaMnu;
+		private System.Windows.Forms.ToolStripMenuItem MediaSaveMetaMnu;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 	}
 }

@@ -16,7 +16,7 @@ namespace Cselian.FTPSync
 		[STAThread]
 		public static void Main(string[] str)
 		{
-			if (str == null | str.Length == 0 | (str.Length == 1 & str[0] == "ym"))
+			if (str == null || str.Length == 0 || (str.Length == 1 && str[0] == "ym"))
 			{
 				// if not SilentMode, FtpInfo.ctor will call SelectOption
 				if (str.Length == 1)

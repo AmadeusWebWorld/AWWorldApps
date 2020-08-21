@@ -270,6 +270,32 @@ namespace Cselian.IViewer.UI
 			}
 		}
 
+		private void MediaOpenMetaMnu_Click(object sender, EventArgs e)
+		{
+			var itm = SelectedFile.LibItem();
+			if (itm.Meta == ExtensionFilter.MetaNone)
+			{
+				itm.CreateTxtMeta();
+				itm.SetTxt(MetaText);
+				SelectedFile.SubItems[VidListView.MetaIndex].Text = itm.Meta;
+
+				SplitMeta.Panel2Collapsed = itm.Meta == ExtensionFilter.MetaNone;
+			}
+			else if (itm.Meta == ExtensionFilter.TextExtensions[2])
+			{
+				itm.SetTxt(MetaText);
+				SelectedFile.SubItems[VidListView.MetaIndex].Text = itm.Meta;
+
+				SplitMeta.Panel2Collapsed = itm.Meta == ExtensionFilter.MetaNone;
+			}
+		}
+
+		private void MediaSaveMetaMnu_Click(object sender, EventArgs e)
+		{
+			var itm = SelectedFile.LibItem();
+			itm.SaveTxtMeta(MetaText);
+		}
+
 		#endregion
 
 		#region "Menu: Tools / Help"
@@ -518,6 +544,11 @@ namespace Cselian.IViewer.UI
 		private void MetaFullscreen_CheckedChanged(object sender, EventArgs e)
 		{
 			SplitMeta.Panel1Collapsed = SplitViewer.Panel2Collapsed = MetaFullscreen.Checked;
+		}
+
+		private void MetaText_TextChanged(object sender, EventArgs e)
+		{
+			MetaText.BackColor = System.Drawing.Color.LightPink;
 		}
 	}
 }

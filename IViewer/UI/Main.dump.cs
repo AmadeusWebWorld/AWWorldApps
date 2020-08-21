@@ -490,11 +490,11 @@ namespace Cselian.IViewer.UI
 				return;
 			}
 
-			SelectedFile.SubItems[VidListView.PlayedIndex - 1].Text = "yes";
+			SelectedFile.SubItems[VidListView.PlayedIndex].Text = "yes";
 
 			var itm = SelectedFile.LibItem();
 			itm.CheckMeta();
-			SelectedFile.SubItems[VidListView.MetaIndex - 1].Text = itm.Meta;
+			SelectedFile.SubItems[VidListView.MetaIndex].Text = itm.Meta;
 
 			SplitMeta.Panel2Collapsed = itm.Meta == ExtensionFilter.MetaNone;
 

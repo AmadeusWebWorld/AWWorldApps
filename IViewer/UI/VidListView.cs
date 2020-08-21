@@ -113,7 +113,8 @@ namespace Cselian.IViewer.UI
 				li.Info.GetFileSize(),
 				li.Info.Extension,
 				li.Meta,
-				li.Info.LastWriteTime.ToString(UI.VidEngine.Settings.LVWDateTimeFormat)
+				li.Info.LastWriteTime.ToString(UI.VidEngine.Settings.LVWDateTimeFormat),
+				string.Empty
 			});
 
 			if (mode != ListContext.Types.Folder)
