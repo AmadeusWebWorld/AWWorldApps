@@ -381,6 +381,11 @@ namespace Cselian.FTPSync
 			IOHelper.RunInNotepad(FtpInfo.Selected.Name + ".log");
 		}
 
+		private void AboutMnu_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("about-ftp-sync.url");
+		}
+
 		#endregion
 
 		#region Context Menu
@@ -407,6 +412,6 @@ namespace Cselian.FTPSync
 			MessageBox.Show(string.Format("Copied paths of {0} {1} items", list.Count, copyChecked ? "checked" : "selected"), Text);
 		}
 
-		#endregion
-	}
+        #endregion
+    }
 }

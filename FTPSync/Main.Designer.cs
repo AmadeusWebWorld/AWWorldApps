@@ -68,7 +68,9 @@
             this.SelectMnu = new System.Windows.Forms.ToolStripButton();
             this.GrabberMnu = new System.Windows.Forms.ToolStripButton();
             this.OpenLogMnu = new System.Windows.Forms.ToolStripButton();
+            this.AboutMnu = new System.Windows.Forms.ToolStripButton();
             this.ContextMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Splitter)).BeginInit();
             this.Splitter.Panel1.SuspendLayout();
             this.Splitter.Panel2.SuspendLayout();
             this.Splitter.SuspendLayout();
@@ -84,7 +86,7 @@
             this.Log.Location = new System.Drawing.Point(0, 2);
             this.Log.Multiline = true;
             this.Log.Name = "Log";
-            this.Log.Size = new System.Drawing.Size(765, 84);
+            this.Log.Size = new System.Drawing.Size(950, 94);
             this.Log.TabIndex = 1;
             this.Log.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Log_KeyDown);
             // 
@@ -100,13 +102,14 @@
             this.MsgCol,
             this.SizeCol});
             this.Files.ContextMenuStrip = this.ContextMenu;
+            this.Files.HideSelection = false;
             listViewItem1.StateImageIndex = 0;
             this.Files.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.Files.LargeImageList = this.icons;
             this.Files.Location = new System.Drawing.Point(0, 0);
             this.Files.Name = "Files";
-            this.Files.Size = new System.Drawing.Size(762, 210);
+            this.Files.Size = new System.Drawing.Size(947, 235);
             this.Files.SmallImageList = this.icons;
             this.Files.TabIndex = 0;
             this.Files.UseCompatibleStateImageBehavior = false;
@@ -119,7 +122,7 @@
             // NameCol
             // 
             this.NameCol.Text = "File";
-            this.NameCol.Width = 493;
+            this.NameCol.Width = 250;
             // 
             // MsgCol
             // 
@@ -132,6 +135,7 @@
             // 
             // ContextMenu
             // 
+            this.ContextMenu.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenContainingFolderMnu,
             this.CopyPathsMnu,
@@ -228,8 +232,8 @@
             // Splitter.Panel2
             // 
             this.Splitter.Panel2.Controls.Add(this.Log);
-            this.Splitter.Size = new System.Drawing.Size(765, 303);
-            this.Splitter.SplitterDistance = 210;
+            this.Splitter.Size = new System.Drawing.Size(950, 340);
+            this.Splitter.SplitterDistance = 235;
             this.Splitter.TabIndex = 4;
             // 
             // fsw
@@ -241,6 +245,7 @@
             // 
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.None;
             this.MenuBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.MenuBar.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SyncMnu,
             this.PauseMnu,
@@ -255,11 +260,13 @@
             this.Sep3,
             this.SelectMnu,
             this.GrabberMnu,
-            this.OpenLogMnu});
+            this.OpenLogMnu,
+            this.AboutMnu});
             this.MenuBar.Location = new System.Drawing.Point(8, 8);
             this.MenuBar.Name = "MenuBar";
+            this.MenuBar.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.MenuBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MenuBar.Size = new System.Drawing.Size(741, 25);
+            this.MenuBar.Size = new System.Drawing.Size(946, 35);
             this.MenuBar.TabIndex = 5;
             this.MenuBar.Text = "Toolbar";
             // 
@@ -268,7 +275,7 @@
             this.SyncMnu.Image = global::Cselian.FTPSync.Properties.Resources.sync;
             this.SyncMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SyncMnu.Name = "SyncMnu";
-            this.SyncMnu.Size = new System.Drawing.Size(52, 22);
+            this.SyncMnu.Size = new System.Drawing.Size(64, 32);
             this.SyncMnu.Text = "&Sync";
             this.SyncMnu.Click += new System.EventHandler(this.SyncOrDelete_Click);
             // 
@@ -277,7 +284,7 @@
             this.PauseMnu.Image = global::Cselian.FTPSync.Properties.Resources.pause;
             this.PauseMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PauseMnu.Name = "PauseMnu";
-            this.PauseMnu.Size = new System.Drawing.Size(58, 22);
+            this.PauseMnu.Size = new System.Drawing.Size(70, 32);
             this.PauseMnu.Text = "&Pause";
             this.PauseMnu.Click += new System.EventHandler(this.Pause_Click);
             // 
@@ -289,7 +296,7 @@
             this.DeleteMnu.Image = global::Cselian.FTPSync.Properties.Resources.delete;
             this.DeleteMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteMnu.Name = "DeleteMnu";
-            this.DeleteMnu.Size = new System.Drawing.Size(69, 22);
+            this.DeleteMnu.Size = new System.Drawing.Size(81, 32);
             this.DeleteMnu.Text = "&Delete";
             // 
             // DeleteFtpMnu
@@ -309,14 +316,14 @@
             // Sep1
             // 
             this.Sep1.Name = "Sep1";
-            this.Sep1.Size = new System.Drawing.Size(6, 25);
+            this.Sep1.Size = new System.Drawing.Size(6, 35);
             // 
             // AddMnu
             // 
             this.AddMnu.Image = global::Cselian.FTPSync.Properties.Resources.add;
             this.AddMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddMnu.Name = "AddMnu";
-            this.AddMnu.Size = new System.Drawing.Size(58, 22);
+            this.AddMnu.Size = new System.Drawing.Size(70, 32);
             this.AddMnu.Text = "&Add...";
             this.AddMnu.Click += new System.EventHandler(this.AddMnu_Click);
             // 
@@ -325,21 +332,21 @@
             this.QueueMnu.Image = global::Cselian.FTPSync.Properties.Resources.add;
             this.QueueMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.QueueMnu.Name = "QueueMnu";
-            this.QueueMnu.Size = new System.Drawing.Size(71, 22);
+            this.QueueMnu.Size = new System.Drawing.Size(83, 32);
             this.QueueMnu.Text = "&Queue...";
             this.QueueMnu.Click += new System.EventHandler(this.QueueMnu_Click);
             // 
             // Sep2
             // 
             this.Sep2.Name = "Sep2";
-            this.Sep2.Size = new System.Drawing.Size(6, 25);
+            this.Sep2.Size = new System.Drawing.Size(6, 35);
             // 
             // ClearMnu
             // 
             this.ClearMnu.Image = global::Cselian.FTPSync.Properties.Resources.clear;
             this.ClearMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClearMnu.Name = "ClearMnu";
-            this.ClearMnu.Size = new System.Drawing.Size(54, 22);
+            this.ClearMnu.Size = new System.Drawing.Size(66, 32);
             this.ClearMnu.Text = "&Clear";
             this.ClearMnu.Click += new System.EventHandler(this.ClearMnu_Click);
             // 
@@ -348,7 +355,7 @@
             this.ClearSelectedMnu.Image = global::Cselian.FTPSync.Properties.Resources.clear;
             this.ClearSelectedMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClearSelectedMnu.Name = "ClearSelectedMnu";
-            this.ClearSelectedMnu.Size = new System.Drawing.Size(71, 22);
+            this.ClearSelectedMnu.Size = new System.Drawing.Size(83, 32);
             this.ClearSelectedMnu.Text = "S&elected";
             this.ClearSelectedMnu.Click += new System.EventHandler(this.ClearSelectedMnu_Click);
             // 
@@ -357,21 +364,21 @@
             this.ClearUncheckedMnu.Image = global::Cselian.FTPSync.Properties.Resources.clear;
             this.ClearUncheckedMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClearUncheckedMnu.Name = "ClearUncheckedMnu";
-            this.ClearUncheckedMnu.Size = new System.Drawing.Size(86, 22);
+            this.ClearUncheckedMnu.Size = new System.Drawing.Size(98, 32);
             this.ClearUncheckedMnu.Text = "&Unchecked";
             this.ClearUncheckedMnu.Click += new System.EventHandler(this.ClearUncheckedMnu_Click);
             // 
             // Sep3
             // 
             this.Sep3.Name = "Sep3";
-            this.Sep3.Size = new System.Drawing.Size(6, 25);
+            this.Sep3.Size = new System.Drawing.Size(6, 35);
             // 
             // SelectMnu
             // 
             this.SelectMnu.Image = global::Cselian.FTPSync.Properties.Resources.select;
             this.SelectMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SelectMnu.Name = "SelectMnu";
-            this.SelectMnu.Size = new System.Drawing.Size(85, 22);
+            this.SelectMnu.Size = new System.Drawing.Size(97, 32);
             this.SelectMnu.Text = "Workspace";
             this.SelectMnu.Click += new System.EventHandler(this.SelectMnu_Click);
             // 
@@ -380,7 +387,7 @@
             this.GrabberMnu.Image = global::Cselian.FTPSync.Properties.Resources.grabber;
             this.GrabberMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GrabberMnu.Name = "GrabberMnu";
-            this.GrabberMnu.Size = new System.Drawing.Size(69, 22);
+            this.GrabberMnu.Size = new System.Drawing.Size(81, 32);
             this.GrabberMnu.Text = "&Grabber";
             this.GrabberMnu.Click += new System.EventHandler(this.GrabberMnu_Click);
             // 
@@ -389,25 +396,35 @@
             this.OpenLogMnu.Image = global::Cselian.FTPSync.Properties.Resources.log;
             this.OpenLogMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenLogMnu.Name = "OpenLogMnu";
-            this.OpenLogMnu.Size = new System.Drawing.Size(47, 22);
+            this.OpenLogMnu.Size = new System.Drawing.Size(59, 32);
             this.OpenLogMnu.Text = "&Log";
             this.OpenLogMnu.Click += new System.EventHandler(this.OpenLogMnu_Click);
+            // 
+            // AboutMnu
+            // 
+            this.AboutMnu.Image = global::Cselian.FTPSync.Properties.Resources.about;
+            this.AboutMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AboutMnu.Name = "AboutMnu";
+            this.AboutMnu.Size = new System.Drawing.Size(72, 32);
+            this.AboutMnu.Text = "About";
+            this.AboutMnu.Click += new System.EventHandler(this.AboutMnu_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 362);
+            this.ClientSize = new System.Drawing.Size(973, 412);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.Splitter);
-            this.MinimumSize = new System.Drawing.Size(800, 300);
+            this.MinimumSize = new System.Drawing.Size(989, 451);
             this.Name = "Main";
-            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ContextMenu.ResumeLayout(false);
             this.Splitter.Panel1.ResumeLayout(false);
             this.Splitter.Panel2.ResumeLayout(false);
             this.Splitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Splitter)).EndInit();
             this.Splitter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fsw)).EndInit();
             this.MenuBar.ResumeLayout(false);
@@ -455,5 +472,6 @@
 		private System.Windows.Forms.ToolStripSeparator SepX1;
 		private System.Windows.Forms.ToolStripMenuItem CopyPathsMnu;
 		private System.Windows.Forms.ToolStripMenuItem CopyPathsOfCheckedMnu;
-	}
+        private System.Windows.Forms.ToolStripButton AboutMnu;
+    }
 }

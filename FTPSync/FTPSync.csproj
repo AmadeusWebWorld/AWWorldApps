@@ -132,6 +132,10 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="about-ftp-sync.url">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\about.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\clear.gif" />
     <None Include="Resources\delete.ico" />

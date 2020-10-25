@@ -5,7 +5,7 @@ namespace Cselian.FTPSync
 {
 	public class Program
 	{
-		public readonly static string Caption = "Cselian's FTP Sync";
+		public readonly static string Caption = "FTP Sync by Panishq Solutions (formerly Cselian Tech)";
 
 		public static bool SilentMode { get; private set; }
 
