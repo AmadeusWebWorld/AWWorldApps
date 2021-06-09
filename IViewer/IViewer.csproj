@@ -97,7 +97,7 @@
     <Compile Include="ExtensionFilter.cs" />
     <Compile Include="UI\VidListView.cs" />
     <Compile Include="UI\Lyrics.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Lyrics.Designer.cs">
       <DependentUpon>Lyrics.cs</DependentUpon>

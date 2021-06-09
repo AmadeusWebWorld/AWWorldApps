@@ -61,10 +61,11 @@ namespace Cselian.FTPSync
 				Rules = new List<Info>
 				{
 					new Info{ How = Type.FolderName, What = ".svn" },
+					new Info{ How = Type.FolderName, What = ".git" },
 					//new Info { How = Type.Extension, What = ".txt" },
 					new Info { How = Type.FolderName, What = "_files" },
 					new Info { How = Type.FolderName, What = "protected\\runtime" },
-					new Info { How = Type.File, What = ".htaccess" }
+					//new Info { How = Type.File, What = ".htaccess" }
 				};
 
 				StoreHelper.Save(Rules);

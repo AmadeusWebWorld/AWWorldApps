@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("IViewer")]
-[assembly: AssemblyDescription("Cselian's Media Player")]
+[assembly: AssemblyDescription("YieldMore.org's Media Player")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("cselian.com")]
-[assembly: AssemblyProduct("Cselian's IViewer")]
-[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2019")]
+[assembly: AssemblyCompany("YieldMore.org")]
+[assembly: AssemblyProduct("YieldMore.org's IViewer")]
+[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("6.0.1.565")]
-[assembly: AssemblyFileVersion("6.0.1.565")]
+[assembly: AssemblyVersion("7.0.3.617")]
+[assembly: AssemblyFileVersion("7.0.3.617")]
