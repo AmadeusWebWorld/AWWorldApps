@@ -338,8 +338,8 @@ namespace Cselian.IViewer.UI
 			var mode = SearchModes.SelectedIndex != -1 ? (SearchMode)SearchModes.SelectedIndex : default(SearchMode);
 			if (sender.Equals(SearchModes))
 			{
-				lblMode.Text = (new string[] { "N", "P", "F" })[(int)mode];
-				ToolTip.SetToolTip(lblMode, (string)SearchModes.SelectedItem);
+				//lblMode.Text = (new string[] { "N", "P", "F" })[(int)mode];
+				//ToolTip.SetToolTip(lblMode, (string)SearchModes.SelectedItem);
 			}
 
 			if (SettingContext || SearchFilter.Text.Length < 3)
