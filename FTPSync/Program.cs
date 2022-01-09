@@ -33,7 +33,10 @@ namespace Cselian.FTPSync
 
 				if (RunGrabber)
 				{
+					/*
 					Application.Run(new Grabber());
+					*/
+					throw new NotImplementedException("Grabber no longer supported!");
 				}
 				else
 				{

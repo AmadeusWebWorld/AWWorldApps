@@ -373,7 +373,10 @@ namespace Cselian.FTPSync
 
 		private void GrabberMnu_Click(object sender, EventArgs e)
 		{
+			/*
 			new Grabber().ShowDialog();
+			*/
+			throw new NotImplementedException("Grabber no longer supported!");
 		}
 
 		private void OpenLogMnu_Click(object sender, EventArgs e)
@@ -383,7 +386,21 @@ namespace Cselian.FTPSync
 
 		private void AboutMnu_Click(object sender, EventArgs e)
 		{
+		}
+
+		private void AboutFTPSyncMnu_Click(object sender, EventArgs e)
+		{
 			System.Diagnostics.Process.Start("about-ftp-sync.url");
+		}
+
+		private void CheckUpdatesMnu_Click(object sender, EventArgs e)
+		{
+			IvyUpdater.UpdateManager.CheckForUpdates();
+		}
+
+		private void UpdateSettingsMnu_Click(object sender, EventArgs e)
+		{
+			IvyUpdater.UpdateManager.ShowSettings();
 		}
 
 		#endregion
@@ -412,6 +429,6 @@ namespace Cselian.FTPSync
 			MessageBox.Show(string.Format("Copied paths of {0} {1} items", list.Count, copyChecked ? "checked" : "selected"), Text);
 		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

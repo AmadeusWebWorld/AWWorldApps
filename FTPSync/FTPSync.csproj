@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cselian.FTPSync</RootNamespace>
     <AssemblyName>Cselian.FTPSync</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -64,12 +65,6 @@
     <Compile Include="Exclusions.cs" />
     <Compile Include="FtpHelper.cs" />
     <Compile Include="FtpInfo.cs" />
-    <Compile Include="Grabber.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grabber.Designer.cs">
-      <DependentUpon>Grabber.cs</DependentUpon>
-    </Compile>
     <Compile Include="InputPaths.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,9 +97,6 @@
     <Compile Include="VCSUI.Designer.cs">
       <DependentUpon>VCSUI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Grabber.resx">
-      <DependentUpon>Grabber.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InputPaths.resx">
       <DependentUpon>InputPaths.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,13 +142,17 @@
     <Content Include="Changelog.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UpdateSettings.xml" />
-    <Content Include="UpdateVersion.xml" />
+    <Content Include="UpdateSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UpdateVersion.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AIO\VB\AIO.Rep.vbproj">
-      <Project>{c26ee6e7-516e-43a4-80d2-e0ffd2e4da4c}</Project>
-      <Name>AIO.Rep</Name>
+    <ProjectReference Include="..\IvyUpdater\IvyUpdater.csproj">
+      <Project>{74895ff1-625f-4a28-accd-76d45c6557cd}</Project>
+      <Name>IvyUpdater</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31320.298
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IViewer", "IViewer.csproj", "{C47029AC-D3A7-4287-9169-6FD459E99819}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IViewer", "IViewer\IViewer.csproj", "{C47029AC-D3A7-4287-9169-6FD459E99819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvyUpdater", "..\IvyUpdater\IvyUpdater.csproj", "{74895FF1-625F-4A28-ACCD-76D45C6557CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvyUpdater", "IvyUpdater\IvyUpdater.csproj", "{74895FF1-625F-4A28-ACCD-76D45C6557CD}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IViewerVB", "VB\IViewerVB.vbproj", "{4EE91205-30F5-48B5-9F16-630C1488128F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPSync", "FTPSync\FTPSync.csproj", "{43E376BF-9F8B-4276-BD96-3DCC5185166D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,18 +39,21 @@ Global
 		{74895FF1-625F-4A28-ACCD-76D45C6557CD}.Release|Mixed Platforms.Build.0 = Release|x86
 		{74895FF1-625F-4A28-ACCD-76D45C6557CD}.Release|x86.ActiveCfg = Release|x86
 		{74895FF1-625F-4A28-ACCD-76D45C6557CD}.Release|x86.Build.0 = Release|x86
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4EE91205-30F5-48B5-9F16-630C1488128F}.Release|x86.ActiveCfg = Release|Any CPU
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Debug|x86.ActiveCfg = Debug|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Debug|x86.Build.0 = Debug|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Release|Any CPU.ActiveCfg = Release|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Release|Mixed Platforms.Build.0 = Release|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Release|x86.ActiveCfg = Release|x86
+		{43E376BF-9F8B-4276-BD96-3DCC5185166D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FF8DA5A-842B-438D-A529-A9D80DFD2A0F}
 	EndGlobalSection
 EndGlobal
