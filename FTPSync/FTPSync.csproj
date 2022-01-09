@@ -150,6 +150,8 @@
     <Content Include="Changelog.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UpdateSettings.xml" />
+    <Content Include="UpdateVersion.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AIO\VB\AIO.Rep.vbproj">

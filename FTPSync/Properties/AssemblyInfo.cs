@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FTPSync")]
-[assembly: AssemblyDescription("Cselian's FTPSync")]
+[assembly: AssemblyDescription("YieldMore.org's FTPSync")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("cselian.com")]
-[assembly: AssemblyProduct("Cselian's FTPSync")]
-[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2012")]
+[assembly: AssemblyCompany("YieldMore.org")]
+[assembly: AssemblyProduct("YieldMore.org's FTPSync")]
+[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2007-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.182")]
-[assembly: AssemblyFileVersion("2.2.182.859")]
+[assembly: AssemblyVersion("5.22.1")]
+[assembly: AssemblyFileVersion("5.22.1.746")]

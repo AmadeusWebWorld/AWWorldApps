@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YieldMore.org")]
 [assembly: AssemblyProduct("YieldMore.org's IViewer")]
-[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2021")]
+[assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2000-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
