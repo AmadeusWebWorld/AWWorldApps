@@ -31,5 +31,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("9.1.9.658")]
-[assembly: AssemblyFileVersion("9.1.9.658")]
+//NB 1098 = weeks since 2000 Dec 22 as per https://planetcalc.com/7741/
+[assembly: AssemblyVersion("9.22.1.1098")]
+[assembly: AssemblyFileVersion("9.22.1.1098")]

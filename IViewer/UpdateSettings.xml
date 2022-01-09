@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <UpdateSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Url>http://cselian.com/apps/updates/</Url>
+  <Url>https://yieldmore.org/core/apps/</Url>
   <ProgramName>IViewer</ProgramName>
-  <Support>imran@cselian.com</Support>
-  <Frequency>Daily</Frequency>
-  <NeverCheck>true</NeverCheck>
-  <NextUpdateAt>2014-07-02T00:00:00+05:30</NextUpdateAt>
-  <LastCheckedAt>2014-07-01T15:30:58.0881259+05:30</LastCheckedAt>
+  <Support>team@yieldmore.org</Support>
+  <Frequency>Monthly</Frequency>
+  <NeverCheck>false</NeverCheck>
+  <NextUpdateAt>2022-02-22T00:00:00+05:30</NextUpdateAt>
+  <LastCheckedAt>2022-01-07T15:30:58.0881259+05:30</LastCheckedAt>
   <LastUpdateAt xsi:nil="true" />
   <LastRemindedAt xsi:nil="true" />
   <RemindAfter>

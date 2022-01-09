@@ -158,7 +158,7 @@
 			this.tabAbout.Controls.Add(this.txtSupport);
 			this.tabAbout.Location = new System.Drawing.Point(4, 22);
 			this.tabAbout.Name = "tabAbout";
-			this.tabAbout.Size = new System.Drawing.Size(253, 193);
+			this.tabAbout.Size = new System.Drawing.Size(253, 147);
 			this.tabAbout.TabIndex = 1;
 			this.tabAbout.Text = "About";
 			this.tabAbout.UseVisualStyleBackColor = true;
@@ -174,9 +174,9 @@
 			// 
 			// txtProgram
 			// 
-			this.txtProgram.Location = new System.Drawing.Point(117, 19);
+			this.txtProgram.Location = new System.Drawing.Point(89, 19);
 			this.txtProgram.Name = "txtProgram";
-			this.txtProgram.Size = new System.Drawing.Size(123, 20);
+			this.txtProgram.Size = new System.Drawing.Size(151, 20);
 			this.txtProgram.TabIndex = 1;
 			// 
 			// lblUrl
@@ -190,9 +190,9 @@
 			// 
 			// txtUrl
 			// 
-			this.txtUrl.Location = new System.Drawing.Point(117, 45);
+			this.txtUrl.Location = new System.Drawing.Point(89, 45);
 			this.txtUrl.Name = "txtUrl";
-			this.txtUrl.Size = new System.Drawing.Size(123, 20);
+			this.txtUrl.Size = new System.Drawing.Size(151, 20);
 			this.txtUrl.TabIndex = 3;
 			// 
 			// lblSupport
@@ -206,9 +206,9 @@
 			// 
 			// txtSupport
 			// 
-			this.txtSupport.Location = new System.Drawing.Point(117, 71);
+			this.txtSupport.Location = new System.Drawing.Point(89, 71);
 			this.txtSupport.Name = "txtSupport";
-			this.txtSupport.Size = new System.Drawing.Size(123, 20);
+			this.txtSupport.Size = new System.Drawing.Size(151, 20);
 			this.txtSupport.TabIndex = 5;
 			// 
 			// tabDates
@@ -315,6 +315,7 @@
 			this.MinimizeBox = false;
 			this.Name = "ViewSettings";
 			this.Padding = new System.Windows.Forms.Padding(10);
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Updater Settings - ";
 			this.tabSettings.ResumeLayout(false);
 			this.tabSettings.PerformLayout();
