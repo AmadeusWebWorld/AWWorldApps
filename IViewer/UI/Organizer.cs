@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cselian.IViewer.UI
+namespace AmadeusWeb.IViewer.UI
 {
 	public partial class Organizer : Form
 	{

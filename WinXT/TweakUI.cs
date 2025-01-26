@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Cselian.Core;
 using Microsoft.Win32;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public partial class TweakUI : Form
 	{

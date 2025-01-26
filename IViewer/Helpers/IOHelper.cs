@@ -5,7 +5,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	/// <summary>
 	/// Extensions for the IO Namespace

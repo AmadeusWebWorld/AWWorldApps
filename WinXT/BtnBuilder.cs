@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	/// <summary>
 	/// Adds Buttons (or Labels) per Folder in the given Parent

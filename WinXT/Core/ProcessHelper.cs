@@ -46,6 +46,7 @@ namespace Cselian.Core
 
 		public static void Shutdown()
 		{
+			/*
 			var ui = new IViewer.UI.UserInput(new[] { "sleep", "shutdown" }, new[] { "sleep" }, false, "sleep");
 			ui.ShowDialog();
 			if (ui.DialogResult == System.Windows.Forms.DialogResult.OK)
@@ -58,6 +59,7 @@ namespace Cselian.Core
 				else
 					ExitWindowsEx(1, 0);
 			}
+			*/
 		}
 
 		[DllImport("user32.dll")]

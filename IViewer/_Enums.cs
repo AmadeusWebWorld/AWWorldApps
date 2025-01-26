@@ -1,4 +1,4 @@
-﻿namespace Cselian.IViewer
+﻿namespace AmadeusWeb.IViewer
 {
 	public enum SelectorType
 	{

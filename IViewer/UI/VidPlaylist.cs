@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
-namespace Cselian.IViewer.UI
+namespace AmadeusWeb.IViewer.UI
 {
 	/// <summary>
 	/// 

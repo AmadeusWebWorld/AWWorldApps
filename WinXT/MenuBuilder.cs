@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Cselian.Core;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public class MenuBuilder
 	{

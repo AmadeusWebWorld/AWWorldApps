@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Cselian.IvyUpdater;
 
-namespace Cselian.IViewer.UI
+namespace AmadeusWeb.IViewer.UI
 {
 	public partial class Splash : Form
 	{

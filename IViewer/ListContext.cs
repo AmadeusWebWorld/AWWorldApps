@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	/// <summary>
 	/// Represents the context used to show files

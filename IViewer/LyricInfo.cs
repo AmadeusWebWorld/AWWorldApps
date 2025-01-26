@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	public class LyricInfo
 	{

@@ -1,4 +1,4 @@
-﻿namespace Cselian.IViewer.UI
+﻿namespace AmadeusWeb.IViewer.UI
 {
 	partial class Main
 	{
@@ -145,7 +145,7 @@
 			this.TreeItemFlatten = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayNext = new System.Windows.Forms.Timer(this.components);
 			this.PanLyrics = new System.Windows.Forms.Timer(this.components);
-			this.MetaLyrics = new Cselian.IViewer.UI.Lyrics();
+			this.MetaLyrics = new AmadeusWeb.IViewer.UI.Lyrics();
 			this.StatusBar.SuspendLayout();
 			this.HistoryMenu.SuspendLayout();
 			this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -1035,7 +1035,7 @@
 			// 
 			this.ViewFolsBtn.Checked = true;
 			this.ViewFolsBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.ViewFolsBtn.Image = global::Cselian.IViewer.Properties.Resources.fol;
+			this.ViewFolsBtn.Image = global::AmadeusWeb.IViewer.Properties.Resources.fol;
 			this.ViewFolsBtn.ImageTransparentColor = System.Drawing.Color.Black;
 			this.ViewFolsBtn.Name = "ViewFolsBtn";
 			this.ViewFolsBtn.Size = new System.Drawing.Size(73, 28);
@@ -1052,7 +1052,7 @@
 			// 
 			this.ViewHorzBtn.Checked = true;
 			this.ViewHorzBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.ViewHorzBtn.Image = global::Cselian.IViewer.Properties.Resources.h;
+			this.ViewHorzBtn.Image = global::AmadeusWeb.IViewer.Properties.Resources.h;
 			this.ViewHorzBtn.ImageTransparentColor = System.Drawing.Color.Black;
 			this.ViewHorzBtn.Name = "ViewHorzBtn";
 			this.ViewHorzBtn.Size = new System.Drawing.Size(90, 28);
@@ -1095,7 +1095,7 @@
 			// PlsVertBtn
 			// 
 			this.PlsVertBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.PlsVertBtn.Image = global::Cselian.IViewer.Properties.Resources.plsv;
+			this.PlsVertBtn.Image = global::AmadeusWeb.IViewer.Properties.Resources.plsv;
 			this.PlsVertBtn.ImageTransparentColor = System.Drawing.Color.Black;
 			this.PlsVertBtn.Name = "PlsVertBtn";
 			this.PlsVertBtn.Size = new System.Drawing.Size(28, 28);
@@ -1108,7 +1108,7 @@
 			this.PlsStickBtn.CheckOnClick = true;
 			this.PlsStickBtn.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.PlsStickBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.PlsStickBtn.Image = global::Cselian.IViewer.Properties.Resources.stick;
+			this.PlsStickBtn.Image = global::AmadeusWeb.IViewer.Properties.Resources.stick;
 			this.PlsStickBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlsStickBtn.Name = "PlsStickBtn";
 			this.PlsStickBtn.Size = new System.Drawing.Size(28, 28);
@@ -1129,7 +1129,7 @@
             this.LViewLarge,
             this.LViewSmall,
             this.LViewTile});
-			this.LViewButtons.Image = global::Cselian.IViewer.Properties.Resources.view;
+			this.LViewButtons.Image = global::AmadeusWeb.IViewer.Properties.Resources.view;
 			this.LViewButtons.ImageTransparentColor = System.Drawing.Color.Black;
 			this.LViewButtons.Name = "LViewButtons";
 			this.LViewButtons.Size = new System.Drawing.Size(37, 28);

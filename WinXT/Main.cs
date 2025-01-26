@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Cselian.Core;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public partial class Main : Form
 	{
@@ -345,12 +345,12 @@ namespace Cselian.Utilities.WinXT
 
 		private void HelpUpdatesCheckMnu_Click(object sender, EventArgs e)
 		{
-			IvyUpdater.UpdateManager.CheckForUpdates();
+			Updater.UpdateManager.CheckForUpdates();
 		}
 
 		private void HelpUpdatesSettingsMnu_Click(object sender, EventArgs e)
 		{
-			IvyUpdater.UpdateManager.ShowSettings();
+			Updater.UpdateManager.ShowSettings();
 		}
 
 		private void HelpAboutMnu_Click(object sender, EventArgs e)

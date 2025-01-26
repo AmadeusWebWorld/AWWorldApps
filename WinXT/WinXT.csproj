@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,11 +8,11 @@
     <ProjectGuid>{4A5AF654-40E8-44A1-B5B4-ED8FDD839283}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cselian.Utilities.WinXT</RootNamespace>
-    <AssemblyName>Cselian.WinXT</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>AmadeusWeb.WinXT</RootNamespace>
+    <AssemblyName>AmadeusWeb.WinXT</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>Cselian.Utilities.WinXT.Program</StartupObject>
+    <StartupObject>AmadeusWeb.WinXT.Program</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -32,7 +32,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,6 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>win-xt.ico</ApplicationIcon>
@@ -171,6 +174,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Compile Include="DirItem.cs" />
+    <None Include="app.config" />
     <None Include="Properties\font.jpg" />
     <None Include="Properties\back.jpg" />
     <None Include="Properties\colour.jpg" />
@@ -187,9 +191,9 @@
     <Content Include="win-xt.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IvyUpdater\IvyUpdater.csproj">
-      <Project>{74895FF1-625F-4A28-ACCD-76D45C6557CD}</Project>
-      <Name>IvyUpdater</Name>
+    <ProjectReference Include="..\Updater\Updater.csproj">
+      <Project>{d8316347-8e69-4d53-81e5-d8f414228f41}</Project>
+      <Name>Updater</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Cselian.Core;
 using Cselian.Core.Data;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public partial class Clocky : Form
 	{

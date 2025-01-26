@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public partial class Edit : Form
 	{

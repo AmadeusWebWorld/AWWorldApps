@@ -1,4 +1,4 @@
-﻿namespace Cselian.Utilities.WinXT
+﻿namespace AmadeusWeb.WinXT
 {
 	partial class Clocky
 	{
@@ -103,7 +103,7 @@
 			// 
 			// FontMnu
 			// 
-			this.FontMnu.Image = global::Cselian.Utilities.WinXT.Properties.Resources.font;
+			this.FontMnu.Image = global::AmadeusWeb.WinXT.Properties.Resources.font;
 			this.FontMnu.Name = "FontMnu";
 			this.FontMnu.Size = new System.Drawing.Size(185, 22);
 			this.FontMnu.Text = "Clock Font";
@@ -111,7 +111,7 @@
 			// 
 			// ColorMnu
 			// 
-			this.ColorMnu.Image = global::Cselian.Utilities.WinXT.Properties.Resources.colour;
+			this.ColorMnu.Image = global::AmadeusWeb.WinXT.Properties.Resources.colour;
 			this.ColorMnu.Name = "ColorMnu";
 			this.ColorMnu.Size = new System.Drawing.Size(185, 22);
 			this.ColorMnu.Text = "Colour";
@@ -119,7 +119,7 @@
 			// 
 			// BackColorMnu
 			// 
-			this.BackColorMnu.Image = global::Cselian.Utilities.WinXT.Properties.Resources.back;
+			this.BackColorMnu.Image = global::AmadeusWeb.WinXT.Properties.Resources.back;
 			this.BackColorMnu.Name = "BackColorMnu";
 			this.BackColorMnu.Size = new System.Drawing.Size(185, 22);
 			this.BackColorMnu.Text = "Text Background";

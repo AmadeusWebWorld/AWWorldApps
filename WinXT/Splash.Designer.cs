@@ -1,4 +1,4 @@
-﻿namespace Cselian.Utilities.WinXT
+﻿namespace AmadeusWeb.WinXT
 {
 	partial class Splash
 	{

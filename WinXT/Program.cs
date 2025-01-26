@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Cselian.Core;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public class Program
 	{
@@ -19,8 +19,8 @@ namespace Cselian.Utilities.WinXT
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			if (IvyUpdater.UpdateManager.MustCheckForUpdates())
-				IvyUpdater.UpdateManager.CheckForUpdates();
+			if (Updater.UpdateManager.MustCheckForUpdates())
+				Updater.UpdateManager.CheckForUpdates();
 
 			Application.Run(ProcessHelper.Register(new Main()));
 		}

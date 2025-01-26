@@ -1,4 +1,4 @@
-﻿namespace Cselian.IViewer.UI
+﻿namespace AmadeusWeb.IViewer.UI
 {
 	partial class Organizer
 	{

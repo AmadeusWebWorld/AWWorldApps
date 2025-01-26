@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Cselian.IViewer.UI
+namespace AmadeusWeb.IViewer.UI
 {
 	public partial class Suggestions : Form
 	{

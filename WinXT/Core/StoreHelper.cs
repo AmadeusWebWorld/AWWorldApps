@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Cselian.Core
+namespace AmadeusWeb
 {
 	/// <summary>
 	/// Reads / Writes the various types of stores.

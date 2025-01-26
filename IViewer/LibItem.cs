@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	public  class LibItem
 	{

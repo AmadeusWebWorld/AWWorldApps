@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	/// <summary>
 	/// 

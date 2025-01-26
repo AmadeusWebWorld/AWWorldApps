@@ -1,0 +1,89 @@
+## TODO:
+ - Updater
+
+26 Jan 2025
+ + Rebrand as AMW
+
+25 October 2020
+ + Added Panishq Logo (About goes to website)
+
+18 July 2015
+ + Added VCSUI screen with basic features
+
+11 April 2013
+ + Input Paths can be relative (from svn) and have forward slashes
+
+06 April 2013
+ + Error / Completion sounds
+ + Select Filter and autosize height
+
+24 March 2013
+ + RunGrabber and use AIO.MultiReplace
+
+23 March 2013
+ + save exclusions
+ + add grabber menu
+ + OpenContainingFolder
+
+22 March 2013
+ + Added Site Grabber
+
+20 March 2013
+ + Added Exclusions
+ + Use FileIcon
+ + add button
+
+30 January 2013
+ + Encode Password and Show Passwords
+
+13 January 2013
+ + syncIcon
+ + select height and rowheight
+
+07 January 2013
+ + QueueMnu
+ + fix column name / width
+
+05 January 2013
+ + open in log
+ + include forWho in logging msg (not in lvw)
+ + problem with enter key
+ + add icons
+
+04 January 2013
+ + use datagridview for selecting / editing ftp details
+ + copy save etc
+ + Domain should not be null
+ + a few cleanups
+
+01 January 2013
+ + Rewrite and Move to C#
+
+
+01 April 2010
+ + FtpSync Command-Line - SaveRequestTo argument uses the next 2 args for url / relative file.
+ + MakeWebRequest is called with url and output is written to file.
+ + Another arg can be used to upload. demo will show how to download ip address and upload it to server.
+
+16 March 2010
+ + FTPSync - FtpHelper, Silent mode for auto upload
+
+14 March 2010
+ + FTPSync - change user/pass shd use FtpInfo.
+Exclude .svn.
+If dropped isn't in LocalBase, don't add
+
+14 March 2010
+ + FTPSync.ini is multiline with a select option
+
+26 Sep 09
+ + Use FtpInfo class
+
+25 Oct 08
+ + Prompts for root folder if not exists.
+
+2 April 2008
+ + Added Features for Creating FTP Folder if not exists
+
+circa October 2007
+ + Initial file system watcher and FTP Upload

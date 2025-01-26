@@ -10,7 +10,7 @@ using System;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	public partial class AppSettings
 	{

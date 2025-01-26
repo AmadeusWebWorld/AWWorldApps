@@ -216,9 +216,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IvyUpdater\IvyUpdater.csproj">
-      <Project>{74895ff1-625f-4a28-accd-76d45c6557cd}</Project>
-      <Name>IvyUpdater</Name>
+    <ProjectReference Include="..\Updater\Updater.csproj">
+      <Project>{d8316347-8e69-4d53-81e5-d8f414228f41}</Project>
+      <Name>Updater</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

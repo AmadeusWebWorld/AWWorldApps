@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Cselian.IViewer.UI
+namespace AmadeusWeb.IViewer.UI
 {
 	public partial class Lyrics : UserControl
 	{

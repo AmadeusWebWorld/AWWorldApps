@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace Cselian.IViewer
+namespace AmadeusWeb.IViewer
 {
 	/// <summary>
 	/// Some Assorted Helper Methods

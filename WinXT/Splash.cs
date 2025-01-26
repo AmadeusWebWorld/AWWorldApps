@@ -1,8 +1,8 @@
-﻿using System;
+﻿using AmadeusWeb.Updater;
+using System;
 using System.Windows.Forms;
-using Cselian.IvyUpdater;
 
-namespace Cselian.Utilities.WinXT
+namespace AmadeusWeb.WinXT
 {
 	public partial class Splash : Form
 	{

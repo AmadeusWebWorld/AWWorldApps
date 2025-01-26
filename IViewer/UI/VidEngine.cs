@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 
-namespace Cselian.IViewer.UI
+namespace AmadeusWeb.IViewer.UI
 {
 	/// <summary>
 	/// 
