@@ -87,10 +87,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Log.Location = new System.Drawing.Point(0, 4);
-            this.Log.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Log.Margin = new System.Windows.Forms.Padding(6);
             this.Log.Multiline = true;
             this.Log.Name = "Log";
-            this.Log.Size = new System.Drawing.Size(1484, 97);
+            this.Log.Size = new System.Drawing.Size(1484, 102);
             this.Log.TabIndex = 1;
             this.Log.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Log_KeyDown);
             // 
@@ -112,9 +112,9 @@
             listViewItem1});
             this.Files.LargeImageList = this.icons;
             this.Files.Location = new System.Drawing.Point(0, 0);
-            this.Files.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Files.Margin = new System.Windows.Forms.Padding(6);
             this.Files.Name = "Files";
-            this.Files.Size = new System.Drawing.Size(1478, 265);
+            this.Files.Size = new System.Drawing.Size(1478, 282);
             this.Files.SmallImageList = this.icons;
             this.Files.TabIndex = 0;
             this.Files.UseCompatibleStateImageBehavior = false;
@@ -127,16 +127,17 @@
             // NameCol
             // 
             this.NameCol.Text = "File";
-            this.NameCol.Width = 250;
+            this.NameCol.Width = 873;
             // 
             // MsgCol
             // 
             this.MsgCol.Text = "Message";
-            this.MsgCol.Width = 171;
+            this.MsgCol.Width = 234;
             // 
             // SizeCol
             // 
             this.SizeCol.Text = "Size";
+            this.SizeCol.Width = 136;
             // 
             // ContextMenu
             // 
@@ -227,7 +228,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Splitter.Location = new System.Drawing.Point(22, 92);
-            this.Splitter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Splitter.Margin = new System.Windows.Forms.Padding(6);
             this.Splitter.Name = "Splitter";
             this.Splitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -238,8 +239,8 @@
             // Splitter.Panel2
             // 
             this.Splitter.Panel2.Controls.Add(this.Log);
-            this.Splitter.Size = new System.Drawing.Size(1488, 390);
-            this.Splitter.SplitterDistance = 268;
+            this.Splitter.Size = new System.Drawing.Size(1488, 416);
+            this.Splitter.SplitterDistance = 285;
             this.Splitter.SplitterWidth = 8;
             this.Splitter.TabIndex = 4;
             // 
@@ -273,7 +274,7 @@
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.MenuBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MenuBar.Size = new System.Drawing.Size(1504, 42);
+            this.MenuBar.Size = new System.Drawing.Size(1566, 50);
             this.MenuBar.TabIndex = 5;
             this.MenuBar.Text = "Toolbar";
             // 
@@ -282,7 +283,7 @@
             this.SyncMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.sync;
             this.SyncMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SyncMnu.Name = "SyncMnu";
-            this.SyncMnu.Size = new System.Drawing.Size(95, 36);
+            this.SyncMnu.Size = new System.Drawing.Size(95, 44);
             this.SyncMnu.Text = "&Sync";
             this.SyncMnu.Click += new System.EventHandler(this.SyncOrDelete_Click);
             // 
@@ -291,7 +292,7 @@
             this.PauseMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.pause;
             this.PauseMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PauseMnu.Name = "PauseMnu";
-            this.PauseMnu.Size = new System.Drawing.Size(107, 36);
+            this.PauseMnu.Size = new System.Drawing.Size(107, 44);
             this.PauseMnu.Text = "&Pause";
             this.PauseMnu.Click += new System.EventHandler(this.Pause_Click);
             // 
@@ -303,7 +304,7 @@
             this.DeleteMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.delete;
             this.DeleteMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteMnu.Name = "DeleteMnu";
-            this.DeleteMnu.Size = new System.Drawing.Size(134, 36);
+            this.DeleteMnu.Size = new System.Drawing.Size(134, 44);
             this.DeleteMnu.Text = "&Delete";
             // 
             // DeleteFtpMnu
@@ -323,14 +324,14 @@
             // Sep1
             // 
             this.Sep1.Name = "Sep1";
-            this.Sep1.Size = new System.Drawing.Size(6, 42);
+            this.Sep1.Size = new System.Drawing.Size(6, 50);
             // 
             // AddMnu
             // 
             this.AddMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.add;
             this.AddMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddMnu.Name = "AddMnu";
-            this.AddMnu.Size = new System.Drawing.Size(104, 36);
+            this.AddMnu.Size = new System.Drawing.Size(104, 44);
             this.AddMnu.Text = "&Add...";
             this.AddMnu.Click += new System.EventHandler(this.AddMnu_Click);
             // 
@@ -339,21 +340,21 @@
             this.QueueMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.add;
             this.QueueMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.QueueMnu.Name = "QueueMnu";
-            this.QueueMnu.Size = new System.Drawing.Size(133, 36);
+            this.QueueMnu.Size = new System.Drawing.Size(133, 44);
             this.QueueMnu.Text = "&Queue...";
             this.QueueMnu.Click += new System.EventHandler(this.QueueMnu_Click);
             // 
             // Sep2
             // 
             this.Sep2.Name = "Sep2";
-            this.Sep2.Size = new System.Drawing.Size(6, 42);
+            this.Sep2.Size = new System.Drawing.Size(6, 50);
             // 
             // ClearMnu
             // 
             this.ClearMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.clear;
             this.ClearMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClearMnu.Name = "ClearMnu";
-            this.ClearMnu.Size = new System.Drawing.Size(100, 36);
+            this.ClearMnu.Size = new System.Drawing.Size(100, 44);
             this.ClearMnu.Text = "&Clear";
             this.ClearMnu.Click += new System.EventHandler(this.ClearMnu_Click);
             // 
@@ -362,7 +363,7 @@
             this.ClearSelectedMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.clear;
             this.ClearSelectedMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClearSelectedMnu.Name = "ClearSelectedMnu";
-            this.ClearSelectedMnu.Size = new System.Drawing.Size(137, 36);
+            this.ClearSelectedMnu.Size = new System.Drawing.Size(137, 44);
             this.ClearSelectedMnu.Text = "S&elected";
             this.ClearSelectedMnu.Click += new System.EventHandler(this.ClearSelectedMnu_Click);
             // 
@@ -371,21 +372,21 @@
             this.ClearUncheckedMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.clear;
             this.ClearUncheckedMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClearUncheckedMnu.Name = "ClearUncheckedMnu";
-            this.ClearUncheckedMnu.Size = new System.Drawing.Size(164, 36);
+            this.ClearUncheckedMnu.Size = new System.Drawing.Size(164, 44);
             this.ClearUncheckedMnu.Text = "&Unchecked";
             this.ClearUncheckedMnu.Click += new System.EventHandler(this.ClearUncheckedMnu_Click);
             // 
             // Sep3
             // 
             this.Sep3.Name = "Sep3";
-            this.Sep3.Size = new System.Drawing.Size(6, 42);
+            this.Sep3.Size = new System.Drawing.Size(6, 50);
             // 
             // SelectMnu
             // 
             this.SelectMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.select;
             this.SelectMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SelectMnu.Name = "SelectMnu";
-            this.SelectMnu.Size = new System.Drawing.Size(161, 36);
+            this.SelectMnu.Size = new System.Drawing.Size(161, 44);
             this.SelectMnu.Text = "Workspace";
             this.SelectMnu.Click += new System.EventHandler(this.SelectMnu_Click);
             // 
@@ -394,7 +395,7 @@
             this.GrabberMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.grabber;
             this.GrabberMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GrabberMnu.Name = "GrabberMnu";
-            this.GrabberMnu.Size = new System.Drawing.Size(131, 36);
+            this.GrabberMnu.Size = new System.Drawing.Size(131, 44);
             this.GrabberMnu.Text = "&Grabber";
             this.GrabberMnu.Click += new System.EventHandler(this.GrabberMnu_Click);
             // 
@@ -403,7 +404,7 @@
             this.OpenLogMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.log;
             this.OpenLogMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenLogMnu.Name = "OpenLogMnu";
-            this.OpenLogMnu.Size = new System.Drawing.Size(85, 36);
+            this.OpenLogMnu.Size = new System.Drawing.Size(85, 44);
             this.OpenLogMnu.Text = "&Log";
             this.OpenLogMnu.Click += new System.EventHandler(this.OpenLogMnu_Click);
             // 
@@ -416,28 +417,28 @@
             this.AboutMnu.Image = global::AmadeusWeb.SmartSiteUploader.Properties.Resources.about;
             this.AboutMnu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AboutMnu.Name = "AboutMnu";
-            this.AboutMnu.Size = new System.Drawing.Size(129, 36);
+            this.AboutMnu.Size = new System.Drawing.Size(129, 44);
             this.AboutMnu.Text = "About";
             // 
             // CheckUpdatesMnu
             // 
             this.CheckUpdatesMnu.Name = "CheckUpdatesMnu";
-            this.CheckUpdatesMnu.Size = new System.Drawing.Size(359, 44);
+            this.CheckUpdatesMnu.Size = new System.Drawing.Size(361, 44);
             this.CheckUpdatesMnu.Text = "Check for &Updates";
             this.CheckUpdatesMnu.Click += new System.EventHandler(this.CheckUpdatesMnu_Click);
             // 
             // UpdateSettingsMnu
             // 
             this.UpdateSettingsMnu.Name = "UpdateSettingsMnu";
-            this.UpdateSettingsMnu.Size = new System.Drawing.Size(359, 44);
+            this.UpdateSettingsMnu.Size = new System.Drawing.Size(361, 44);
             this.UpdateSettingsMnu.Text = "Update S&ettings";
             this.UpdateSettingsMnu.Click += new System.EventHandler(this.UpdateSettingsMnu_Click);
             // 
             // AboutFTPSyncMnu
             // 
             this.AboutFTPSyncMnu.Name = "AboutFTPSyncMnu";
-            this.AboutFTPSyncMnu.Size = new System.Drawing.Size(359, 44);
-            this.AboutFTPSyncMnu.Text = "About &FTPSync";
+            this.AboutFTPSyncMnu.Size = new System.Drawing.Size(361, 44);
+            this.AboutFTPSyncMnu.Text = "About &FTP Uploader";
             this.AboutFTPSyncMnu.Click += new System.EventHandler(this.AboutFTPSyncMnu_Click);
             // 
             // Main
@@ -447,7 +448,7 @@
             this.ClientSize = new System.Drawing.Size(1534, 529);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.Splitter);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(1560, 600);
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(16, 15, 16, 15);

@@ -1,5 +1,4 @@
-﻿using AmadeusWeb.Updater;
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,9 +8,9 @@ namespace AmadeusWeb.SmartSiteUploader
 {
 	public class FtpInfo
 	{
-		public static readonly string ConfigFile = StoreHelper.DataFolder + "FTPSync.ini";
+		public static readonly string ConfigFile = StoreHelper.DataFolder + "FTPUploader.ini";
 
-		private static readonly string Default = @"Amadeus Main=D:\AmadeusWeb\all\|ftp://ftp.amadeusweb.com/all/|amadeus|";
+		private static readonly string Default = @"Amadeus All=D:\AmadeusWeb\all\|ftp://ftp.amadeusweb.com/all/|amadeus|";
 
 		#region "Static ctor / Properties"
 

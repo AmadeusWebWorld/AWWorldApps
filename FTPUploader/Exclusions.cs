@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Cselian.Core;
 
 namespace AmadeusWeb.SmartSiteUploader
 {
-	/// <summary>
-	/// 
-	/// </summary>
-	public class Exclusions // Cannot be static if want to sxe inner class
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Exclusions // Cannot be static if want to sxe inner class
 	{
 		private static List<Info> Rules;
 		private static List<Info> MyRules;
@@ -46,7 +45,7 @@ namespace AmadeusWeb.SmartSiteUploader
                 }
             }
 
-            if (m != null)
+            if (m != null && false) //skip this verbose logging
 			{
 				FtpHelper.SetMessage(string.Format("excluded '{0}' matching rule {1} '{2}'", path, m.How, m.What));
 			}
@@ -62,10 +61,8 @@ namespace AmadeusWeb.SmartSiteUploader
 				{
 					new Info{ How = Type.FolderName, What = ".svn" },
 					new Info{ How = Type.FolderName, What = ".git" },
-					//new Info { How = Type.Extension, What = ".txt" },
-					new Info { How = Type.FolderName, What = "_files" },
-					new Info { How = Type.FolderName, What = "protected\\runtime" },
-					//new Info { How = Type.File, What = ".htaccess" }
+					new Info { How = Type.FolderName, What = ".files" },
+					new Info { How = Type.FolderName, What = ".files" },
 				};
 
 				StoreHelper.Save(Rules);
