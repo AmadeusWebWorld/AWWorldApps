@@ -1,9 +1,9 @@
-﻿using System;
+﻿using AmadeusWeb.Updater;
+using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using AmadeusWeb.Updater;
-using Microsoft.VisualBasic;
 
 namespace AmadeusWeb.SmartSiteUploader
 {
@@ -21,7 +21,7 @@ namespace AmadeusWeb.SmartSiteUploader
 			Main_Resize(null, null);
 		}
 
-		private void Main_Load(object sender, System.EventArgs e)
+		private void Main_Load(object sender, EventArgs e)
 		{
 			Files.Items.Clear();
 
@@ -164,17 +164,16 @@ namespace AmadeusWeb.SmartSiteUploader
 
 		#region Column Resizing
 
-		private void Main_Resize(object sender, System.EventArgs e)
+		private void Main_Resize(object sender, EventArgs e)
 		{
 			NameCol.Width = Files.Width - 30 - MsgCol.Width - SizeCol.Width;
 		}
 
-		private void Files_ColumnWidthChanged(object sender, System.Windows.Forms.ColumnWidthChangedEventArgs e)
+		private void Files_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
 		{
-			if (e.ColumnIndex != 0)
-			{
-				NameCol.Width = Files.Width - 30 - MsgCol.Width - SizeCol.Width;
-			}
+			if (e.ColumnIndex == 0) return;
+
+			NameCol.Width = Files.Width - 30 - MsgCol.Width - SizeCol.Width;
 		}
 
 		#endregion
@@ -254,7 +253,7 @@ namespace AmadeusWeb.SmartSiteUploader
 		#region Toolbar
 
 		// http://www.codeguru.com/csharp/csharp/cs_internet/desktopapplications/article.php/c13163/
-		private void SyncOrDelete_Click(object sender, System.EventArgs e)
+		private void SyncOrDelete_Click(object sender, EventArgs e)
 		{
 			var delFtp = DeleteFtpMnu.Equals(sender);
 			var delLocal = DeleteLocalMnu.Equals(sender);
@@ -306,7 +305,7 @@ namespace AmadeusWeb.SmartSiteUploader
 			if (delLocal) RemoveNonExistant();
 		}
 
-		private void Pause_Click(object sender, System.EventArgs e)
+		private void Pause_Click(object sender, EventArgs e)
 		{
 			fsw.EnableRaisingEvents = !fsw.EnableRaisingEvents;
 			PauseMnu.Text = fsw.EnableRaisingEvents ? "&Pause Listening" : "&Listen";
