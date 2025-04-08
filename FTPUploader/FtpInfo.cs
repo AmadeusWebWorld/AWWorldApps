@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace AmadeusWeb.SmartSiteUploader
 {
-	public class FtpInfo
+    public class FtpInfo
 	{
 		public static readonly string ConfigFile = StoreHelper.DataFolder + "FTPUploader.ini";
 

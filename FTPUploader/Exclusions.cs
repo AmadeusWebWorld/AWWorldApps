@@ -62,7 +62,6 @@ namespace AmadeusWeb.SmartSiteUploader
 					new Info{ How = Type.FolderName, What = ".svn" },
 					new Info{ How = Type.FolderName, What = ".git" },
 					new Info { How = Type.FolderName, What = ".files" },
-					new Info { How = Type.FolderName, What = ".files" },
 				};
 
 				StoreHelper.Save(Rules);

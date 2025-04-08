@@ -18,7 +18,7 @@ namespace AmadeusWeb.SmartSiteUploader
 			RefreshOptions();
 			SetSelected(sel);
 
-			GrabberMnu.Visible = Sep3.Visible = sel == null;
+			//GrabberMnu.Visible = Sep3.Visible = sel == null;
 			dgvItems.ColumnWidthChanged += dgvItems_ColumnWidthChanged;
 		}
 

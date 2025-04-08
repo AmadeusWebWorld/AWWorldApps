@@ -1,6 +1,9 @@
 ## TODO:
  - Updater
 
+8 Apr 2025
+ + Make part of v7
+
 26 Jan 2025
  + Rebrand as AMW
 
@@ -58,7 +61,6 @@
 
 01 January 2013
  + Rewrite and Move to C#
-
 
 01 April 2010
  + FtpSync Command-Line - SaveRequestTo argument uses the next 2 args for url / relative file.

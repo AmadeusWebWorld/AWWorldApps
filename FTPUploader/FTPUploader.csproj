@@ -121,12 +121,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\Data\FTPUploader.ini">
+      <Link>FTPUploader.ini</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="about-ftp-uploader.url">
+    <AdditionalFiles Include="about-ftp-uploader.url">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </AdditionalFiles>
     <None Include="Resources\add.png" />
     <None Include="Resources\clear.gif" />
     <None Include="Resources\delete.ico" />

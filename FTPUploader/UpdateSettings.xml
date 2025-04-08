@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <UpdateSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Url>https://builder.amadeusweb.com/downloads/</Url>
+  <Url>https://v7.amadeusweb.com/downloads/</Url>
   <ProgramName>FTPSync</ProgramName>
   <Support>imran@amadeusweb.com</Support>
   <Frequency>Monthly</Frequency>
-  <NeverCheck>false</NeverCheck>
+  <NeverCheck>true</NeverCheck>
   <NextUpdateAt>2022-02-22T00:00:00+05:30</NextUpdateAt>
   <LastCheckedAt>2022-01-07T15:30:58.0881259+05:30</LastCheckedAt>
   <LastUpdateAt xsi:nil="true" />
