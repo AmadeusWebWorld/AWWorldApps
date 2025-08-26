@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AMW / Utilities / Smart Site Uploader")]
 [assembly: AssemblyDescription("AmadeusWeb.com's Smart Site Uploader (FTPSync)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AmadeusWeb.com")]
+[assembly: AssemblyCompany("AmadeusWeb.world")]
 [assembly: AssemblyProduct("Smart Site Uploader (FTPSync)")]
 [assembly: AssemblyCopyright("Copyright © Imran Ali Namazi, 2007-2025")]
 [assembly: AssemblyTrademark("")]
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("25.1.750")]
-[assembly: AssemblyFileVersion("25.1.750")]
+[assembly: AssemblyVersion("25.8.1")]
+[assembly: AssemblyFileVersion("25.8.1")]

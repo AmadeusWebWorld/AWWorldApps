@@ -63,16 +63,6 @@ namespace AmadeusWeb.SmartSiteUploader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap about {
-            get {
-                object obj = ResourceManager.GetObject("about", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -96,16 +86,6 @@ namespace AmadeusWeb.SmartSiteUploader.Properties {
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap grabber {
-            get {
-                object obj = ResourceManager.GetObject("grabber", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -167,6 +147,16 @@ namespace AmadeusWeb.SmartSiteUploader.Properties {
             get {
                 object obj = ResourceManager.GetObject("syncIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world {
+            get {
+                object obj = ResourceManager.GetObject("world", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

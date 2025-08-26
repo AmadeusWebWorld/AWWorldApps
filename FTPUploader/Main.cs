@@ -1,5 +1,4 @@
-﻿using AmadeusWeb.Updater;
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -96,7 +95,7 @@ namespace AmadeusWeb.SmartSiteUploader
 
 		#region " Record Changes (fsw handles & setMessage)"
 
-		private void fsw_Changed(object sender, System.IO.FileSystemEventArgs e)
+		private void fsw_Changed(object sender, FileSystemEventArgs e)
 		{
 			if (Exclusions.Exclude(e.FullPath))
 				return;
@@ -104,7 +103,7 @@ namespace AmadeusWeb.SmartSiteUploader
 			var itm = Files.Items.Find(e.FullPath, false);
 
 			ListViewItem item = null;
-			if (e.ChangeType == System.IO.WatcherChangeTypes.Deleted)
+			if (e.ChangeType == WatcherChangeTypes.Deleted)
 			{
 				// If itm.Length = 1 Then Files.Items.Remove(itm(0)) 'remove since forced to remove nonexistant files anyway
 			}
@@ -319,7 +318,7 @@ namespace AmadeusWeb.SmartSiteUploader
 				LastAddedFrom.StartsWith(FtpInfo.Selected.LocalFolder, StringComparison.OrdinalIgnoreCase) == false;
 			fo.InitialDirectory = setToLocal ? FtpInfo.Selected.LocalFolder : LastAddedFrom;
 
-			if (fo.ShowDialog() == System.Windows.Forms.DialogResult.Cancel || fo.FileNames.Length == 0)
+			if (fo.ShowDialog() == DialogResult.Cancel || fo.FileNames.Length == 0)
 				return;
 
 			foreach (var item in fo.FileNames)
@@ -395,12 +394,14 @@ namespace AmadeusWeb.SmartSiteUploader
 
 		private void CheckUpdatesMnu_Click(object sender, EventArgs e)
 		{
-            UpdateManager.CheckForUpdates();
+			MessageBox.Show("Need to reinstate updater from 2013");
+            //UpdateManager.CheckForUpdates();
 		}
 
 		private void UpdateSettingsMnu_Click(object sender, EventArgs e)
 		{
-			UpdateManager.ShowSettings();
+			MessageBox.Show("Need to reinstate updater from 2013");
+			//UpdateManager.ShowSettings();
 		}
 
 		#endregion

@@ -65,6 +65,12 @@
     <Compile Include="Exclusions.cs" />
     <Compile Include="FtpHelper.cs" />
     <Compile Include="FtpInfo.cs" />
+    <Compile Include="Grabber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grabber.Designer.cs">
+      <DependentUpon>Grabber.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputPaths.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="VCSUI.Designer.cs">
       <DependentUpon>VCSUI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Grabber.resx">
+      <DependentUpon>Grabber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputPaths.resx">
       <DependentUpon>InputPaths.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,7 +143,6 @@
     <None Include="Resources\add.png" />
     <None Include="Resources\clear.gif" />
     <None Include="Resources\delete.ico" />
-    <None Include="Resources\grabber.gif" />
     <None Include="Resources\listen.gif" />
     <None Include="Resources\log.gif" />
     <None Include="Resources\pause.gif" />
@@ -145,19 +153,13 @@
     <Content Include="Changelog.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\about.png" />
+    <None Include="Resources\world.png" />
     <Content Include="UpdateSettings.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="UpdateVersion.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Updater\Updater.csproj">
-      <Project>{d8316347-8e69-4d53-81e5-d8f414228f41}</Project>
-      <Name>Updater</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿namespace Cselian.FTPSync
+﻿namespace AmadeusWeb.SmartSiteUploader
 {
 	partial class Grabber
 	{

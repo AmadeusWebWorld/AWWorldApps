@@ -21,18 +21,10 @@ namespace AmadeusWeb.SmartSiteUploader
 
 			if (Program.SilentMode)
 				return;
-			Selected = null;
-			if (HasMultipleOptions)
-			{
-				SelectOption();
-			}
-			else
-			{
-				if (File.Exists(ConfigFile) == false)
-					File.WriteAllText(ConfigFile, Default + IOHelper.Encode("passwd"));
 
-				IOHelper.RunInNotepad(ConfigFile);
-			}
+			Selected = null;
+
+			SelectOption(); //always call
 		}
 
 		public FtpInfo(string line)
@@ -123,7 +115,7 @@ namespace AmadeusWeb.SmartSiteUploader
 
 		public static void SetSelected(string name)
 		{
-			foreach (var opt in FtpInfo.Options)
+			foreach (var opt in Options)
 			{
 				if (opt.Name == name)
 				{

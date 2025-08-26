@@ -1,54 +1,34 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
 namespace AmadeusWeb.SmartSiteUploader
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class Exclusions // Cannot be static if want to sxe inner class
 	{
 		private static List<Info> Rules;
-		private static List<Info> MyRules;
-		private static string LastSelected;
 
 		public enum Type
 		{
 			File,
-			Folder,
-			FolderName,
+			FolderAnywhere,
 			Extension,
 		}
 
 		static Exclusions()
 		{
 			StoreHelper.RegisterAlias<List<Info>>("Exclusions");
+			CheckRules();
 		}
 
 		public static bool Exclude(string path)
 		{
-			CheckRules();
-
-			var p = path.ToLower();
-			var f = Path.GetFileName(path);
-			var e = Path.GetExtension(path);
-
-            Info m = null;
-            foreach (var item in MyRules)
-            {
-                if (item.Match(p, f, e))
-                {
-                    m = item;
-                    break;
-                }
-            }
+			var m = Rules.FirstOrDefault(x => x.Match(path));
 
             if (m != null && false) //skip this verbose logging
-			{
 				FtpHelper.SetMessage(string.Format("excluded '{0}' matching rule {1} '{2}'", path, m.How, m.What));
-			}
 
 			return m != null;
 		}
@@ -59,21 +39,12 @@ namespace AmadeusWeb.SmartSiteUploader
 			{
 				Rules = new List<Info>
 				{
-					new Info{ How = Type.FolderName, What = ".svn" },
-					new Info{ How = Type.FolderName, What = ".git" },
-					new Info { How = Type.FolderName, What = ".files" },
+					new Info{ How = Type.FolderAnywhere, What = ".git" },
+					new Info { How = Type.FolderAnywhere, What = ".files" },
+					new Info{ How = Type.File, What = ".git" },
 				};
 
 				StoreHelper.Save(Rules);
-			}
-
-			if (LastSelected != FtpInfo.Selected.Name)
-			{
-                MyRules = new List<Info>();
-                foreach (var item in Rules)
-                    if (string.IsNullOrEmpty(item.Workspace) || item.Workspace == FtpInfo.Selected.Name)
-                        MyRules.Add(item);
-				LastSelected = FtpInfo.Selected.Name;
 			}
 		}
 
@@ -85,21 +56,16 @@ namespace AmadeusWeb.SmartSiteUploader
 			[XmlAttribute]
 			public Type How { get; set; }
 
-			[XmlAttribute]
-			public string Workspace { get; set; }
-
-			public bool Match(string path, string file, string extension)
+			public bool Match(string path)
 			{
 				switch (How)
 				{
+					case Type.FolderAnywhere:
+						return path.Contains(What);
 					case Type.File:
-						return What == file;
-					case Type.Folder:
-						return path.StartsWith(What + "\\");
-					case Type.FolderName:
-						return path.StartsWith(What + "\\") || path.Contains("\\" + What + "\\");
+						return What == Path.GetFileName(path);
 					case Type.Extension:
-						return What == extension;
+						return What == Path.GetExtension(path);
 					default:
 						throw new NotSupportedException();
 				}

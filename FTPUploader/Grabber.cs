@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace Cselian.FTPSync
+namespace AmadeusWeb.SmartSiteUploader
 {
 	public partial class Grabber : Form
 	{
@@ -82,6 +82,7 @@ namespace Cselian.FTPSync
 
 		private void btnReplace_Click(object sender, EventArgs e)
 		{
+			/*
 			Tools.App.GenDataFolder = ProjectFolder;
 			var dlg = new Tools.MultiReplace();
 			var list = new System.Collections.Generic.List<string>();
@@ -93,6 +94,7 @@ namespace Cselian.FTPSync
 
 			dlg.Tag = list;
 			dlg.ShowDialog();
+			*/
 		}
 
 		#region Helpers
